@@ -15,6 +15,16 @@ namespace StoreManagement.DbManagment
         private string SelectMovements = string.Empty;
         private string DeleteMovements = string.Empty;
 
+        private string InsertIntoArchiveMovements = string.Empty;
+        private string UpdateArchiveMovements = string.Empty;
+        private string SelectArchiveMovements = string.Empty;
+        private string DeleteArchiveMovements = string.Empty;
+
+        private string InsertIntoArchiveGoodsValue = string.Empty;
+        private string UpdateArchiveGoodsValue = string.Empty;
+        private string SelectArchiveGoodsValue = string.Empty;
+        private string DeleteArchiveGoodsValue = string.Empty;
+
         private string InsertIntoTypeMovements = string.Empty;
         private string UpdateTypeMovements = string.Empty;
         private string SelectTypeMovements = string.Empty;
@@ -110,6 +120,62 @@ namespace StoreManagement.DbManagment
 
                     DeleteMovements = String.Format("DELETE {0} FROM Movements WHERE {1} = {2}", param[0], param[1], param[2]);
                     qry = DeleteMovements;
+                    break;
+
+                case "InsertIntoArchiveMovements":
+                    temp = InsertIntoArchiveMovements;
+
+                    InsertIntoArchiveMovements = String.Format("INSERT INTO ArchiveMovements(IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
+                    qry = InsertIntoArchiveMovements;
+                    break;
+
+                case "UpdateArchiveMovements":
+                    temp = UpdateArchiveMovements;
+
+                    UpdateArchiveMovements = String.Format("UPDATE ArchiveMovements SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    qry = UpdateArchiveMovements;
+                    break;
+
+                case "SelectArchiveMovements":
+                    temp = SelectArchiveMovements;
+
+                    SelectArchiveMovements = String.Format("Select {0} FROM ArchiveMovements", param[0]);
+                    qry = SelectArchiveMovements;
+                    break;
+
+                case "DeleteArchiveMovements":
+                    temp = DeleteArchiveMovements;
+
+                    DeleteArchiveMovements = String.Format("DELETE {0} FROM ArchiveMovements WHERE {1} = {2}", param[0], param[1], param[2]);
+                    qry = DeleteArchiveMovements;
+                    break;
+
+                case "InsertIntoArchiveGoodsValue":
+                    temp = InsertIntoArchiveGoodsValue;
+
+                    InsertIntoArchiveGoodsValue = String.Format("INSERT INTO ArchiveGoodsValue(IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
+                    qry = InsertIntoArchiveGoodsValue;
+                    break;
+
+                case "UpdateArchiveGoodsValue":
+                    temp = UpdateArchiveGoodsValue;
+
+                    UpdateArchiveGoodsValue = String.Format("UPDATE ArchiveGoodsValue SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    qry = UpdateArchiveGoodsValue;
+                    break;
+
+                case "SelectArchiveGoodsValue":
+                    temp = SelectArchiveGoodsValue;
+
+                    SelectArchiveGoodsValue = String.Format("Select {0} FROM ArchiveGoodsValue", param[0]);
+                    qry = SelectArchiveGoodsValue;
+                    break;
+
+                case "DeleteArchiveGoodsValue":
+                    temp = DeleteArchiveGoodsValue;
+
+                    DeleteArchiveGoodsValue = String.Format("DELETE {0} FROM ArchiveGoodsValue WHERE {1} = {2}", param[0], param[1], param[2]);
+                    qry = DeleteArchiveGoodsValue;
                     break;
 
                 case "InsertIntoTypeMovements":
