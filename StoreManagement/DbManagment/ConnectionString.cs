@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,44 +13,26 @@ namespace StoreManagement.DbManagment
 
         private string DB_NAME;
 
-        private string DB_USERNAME;
-
-        private string DB_PASSWORD;
         public string getDbHost()
         {
             return DB_Host;
         }
-        public void setDBhost(string dbhost)
+        public void setDBhost()
         {
-            DB_Host = dbhost;
+            DB_Host = ConfigurationSettings.AppSettings["DB_Host"].ToString().Trim();
         }
         public string getDbName()
         {
             return DB_NAME;
         }
-        public void setDBName(string dbName)
+        public void setDBName()
         {
-            DB_NAME = dbName;
+            DB_NAME = ConfigurationSettings.AppSettings["DB_NAME"].ToString().Trim();
         }
-        public string getDbUsername()
-        {
-            return DB_USERNAME;
-        }
-        public void setDBUsername(string dbUsername)
-        {
-            DB_USERNAME = dbUsername;
-        }
-        public string getDbPassword()
-        {
-            return DB_PASSWORD;
-        }
-        public void setDBPassword(string dbPassword)
-        {
-            DB_PASSWORD = dbPassword;
-        }
-
         public string GetConnectionString()
         {
+            setDBhost();
+            setDBName();
             string connString = $"SERVER={getDbHost()};Initial Catalog={getDbName()};Trusted_Connection=True;";
             return connString;
         }

@@ -85,10 +85,18 @@ namespace StoreManagement.DbManagment
         private string SelectGoodsUpdateValue = string.Empty;
         private string DeleteGoodsUpdateValue = string.Empty;
 
+        private string strWhere = string.Empty;
 
         private string queryToReturn = string.Empty;
 
-        public string SetQuery(string QueryDaFare, List<String> parametri)
+
+        public string SetStrWhere(string str, List<String> paramWhere)
+        {
+            str = String.Format("WHERE {0} = {1}", param[0] = , param[1]);
+            return strWhere;
+        }
+
+        public string SetQuery(string QueryDaFare, List<String> parametri, string stringaWhere)
         {
             string qry = string.Empty;
 
@@ -97,14 +105,14 @@ namespace StoreManagement.DbManagment
                 case "InsertIntoMovements":
                     string temp = InsertIntoMovements;
 
-                    InsertIntoMovements = String.Format("INSERT INTO Movements(IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
+                    InsertIntoMovements = String.Format("INSERT INTO Movements(IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}')", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
                     qry = InsertIntoMovements;
                     break;
 
                 case "UpdateMovements":
                     temp = UpdateMovements;
 
-                    UpdateMovements = String.Format("UPDATE Movements SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    UpdateMovements = String.Format("UPDATE Movements SET {0} = {1} " + stringaWhere, param[0], param[1]);
                     qry = UpdateMovements;
                     break;
 
@@ -118,14 +126,14 @@ namespace StoreManagement.DbManagment
                 case "DeleteMovements":
                     temp = DeleteMovements;
 
-                    DeleteMovements = String.Format("DELETE {0} FROM Movements WHERE {1} = {2}", param[0], param[1], param[2]);
+                    DeleteMovements = String.Format("DELETE FROM Movements" + stringaWhere);
                     qry = DeleteMovements;
                     break;
 
                 case "InsertIntoArchiveMovements":
                     temp = InsertIntoArchiveMovements;
 
-                    InsertIntoArchiveMovements = String.Format("INSERT INTO ArchiveMovements(IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
+                    InsertIntoArchiveMovements = String.Format("INSERT INTO ArchiveMovements(IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}')", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
                     qry = InsertIntoArchiveMovements;
                     break;
 
@@ -153,7 +161,7 @@ namespace StoreManagement.DbManagment
                 case "InsertIntoArchiveGoodsValue":
                     temp = InsertIntoArchiveGoodsValue;
 
-                    InsertIntoArchiveGoodsValue = String.Format("INSERT INTO ArchiveGoodsValue(IDProduct, VAT, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateOldValue) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7]);
+                    InsertIntoArchiveGoodsValue = String.Format("INSERT INTO ArchiveGoodsValue(IDProduct, VAT, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateOldValue) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7]);
                     qry = InsertIntoArchiveGoodsValue;
                     break;
 
@@ -181,7 +189,7 @@ namespace StoreManagement.DbManagment
                 case "InsertIntoTypeMovements":
                     temp = InsertIntoTypeMovements;
 
-                    InsertIntoTypeMovements = String.Format("INSERT INTO TypeMovements(DescriptionMovement) VALUES({0})", param[0]);
+                    InsertIntoTypeMovements = String.Format("INSERT INTO TypeMovements(DescriptionMovement) VALUES('{0}')", param[0]);
                     qry = InsertIntoTypeMovements;
                     break;
 
@@ -209,7 +217,7 @@ namespace StoreManagement.DbManagment
                 case "InsertIntoSuppliers":
                     temp = InsertIntoSuppliers;
 
-                    InsertIntoSuppliers = String.Format("INSERT INTO Suppliers(NameLegalOwner, SurnameLegalOwner, CompanyName, Address, CivicNumber, ZipCode, City, Region, Nation, Phone, Email, PEC, WebSite, SDI_Code, VAT_Code) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14] );
+                    InsertIntoSuppliers = String.Format("INSERT INTO Suppliers(NameLegalOwner, SurnameLegalOwner, CompanyName, Address, CivicNumber, ZipCode, City, Region, Nation, Phone, Email, PEC, WebSite, SDI_Code, VAT_Code) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}')", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14] );
                     qry = InsertIntoSuppliers;
                     break;
 
@@ -237,7 +245,7 @@ namespace StoreManagement.DbManagment
                 case "InsertIntoCustomers":
                     temp = InsertIntoCustomers;
 
-                    InsertIntoCustomers = String.Format("INSERT INTO Customers(NameLegalOwner, SurnameLegalOwner, CompanyName, Address, CivicNumber, ZipCode, City, Region, Nation, Phone, Email, PEC, WebSite, SDI_Code, VAT_Code, StatusCustomer) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14], param[15]);
+                    InsertIntoCustomers = String.Format("INSERT INTO Customers(NameLegalOwner, SurnameLegalOwner, CompanyName, Address, CivicNumber, ZipCode, City, Region, Nation, Phone, Email, PEC, WebSite, SDI_Code, VAT_Code, StatusCustomer) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}')", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14], param[15]);
                     qry = InsertIntoCustomers;
                     break;
 
@@ -265,7 +273,7 @@ namespace StoreManagement.DbManagment
                 case "InsertIntoCustomerState":
                     temp = InsertIntoCustomerState;
 
-                    InsertIntoCustomerState = String.Format("INSERT INTO Customer(StatusDescription) VALUES({0})", param[0]);
+                    InsertIntoCustomerState = String.Format("INSERT INTO Customer(StatusDescription) VALUES('{0}')", param[0]);
                     qry = InsertIntoCustomerState;
                     break;
 
@@ -293,7 +301,7 @@ namespace StoreManagement.DbManagment
                 case "InsertIntoInvoicesHead":
                     temp = InsertIntoInvoicesHead;
 
-                    InsertIntoInvoicesHead = String.Format("INSERT INTO InvoicesHead(IDCustomer, TotalPrice, DiscountedPrice) VALUES({0}, {1}, {2})", param[0], param[1], param[2]);
+                    InsertIntoInvoicesHead = String.Format("INSERT INTO InvoicesHead(IDCustomer, TotalPrice, DiscountedPrice) VALUES('{0}', '{1}', '{2}')", param[0], param[1], param[2]);
                     qry = InsertIntoInvoicesHead;
                     break;
 
@@ -321,7 +329,7 @@ namespace StoreManagement.DbManagment
                 case "InsertIntoInvoicesRows":
                     temp = InsertIntoInvoicesRows;
 
-                    InsertIntoInvoicesRows = String.Format("INSERT INTO InvoicesRows(IDInvoice, IDProduct, Qta, Price, VAT, PriceSubTotal, TotalQta) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6})", param[0], param[1], param[2], param[3], param[4], param[5], param[6]);
+                    InsertIntoInvoicesRows = String.Format("INSERT INTO InvoicesRows(IDInvoice, IDProduct, Qta, Price, VAT, PriceSubTotal, TotalQta) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", param[0], param[1], param[2], param[3], param[4], param[5], param[6]);
                     qry = InsertIntoInvoicesRows;
                     break;
 
@@ -349,7 +357,7 @@ namespace StoreManagement.DbManagment
                 case "InsertGoodsValues":
                     temp = InsertGoodsValues;
 
-                    InsertGoodsValues = String.Format("INSERT INTO GoodsValues(IDProduct, VAT, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateUpdateValue, TypeUpdateValue) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8]);
+                    InsertGoodsValues = String.Format("INSERT INTO GoodsValues(IDProduct, VAT, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateUpdateValue, TypeUpdateValue) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8]);
                     qry = InsertGoodsValues;
                     break;
 
@@ -377,7 +385,7 @@ namespace StoreManagement.DbManagment
                 case "InsertFoodGoods":
                     temp = InsertFoodGoods;
 
-                    InsertFoodGoods = String.Format("INSERT INTO FoodGoods(DescriptionProduct, EAN, IDSupplier, IDCategory) VALUES({0}, {1}, {2}, {3})", param[0], param[1], param[2], param[3]);
+                    InsertFoodGoods = String.Format("INSERT INTO FoodGoods(DescriptionProduct, EAN, IDSupplier, IDCategory) VALUES('{0}', '{1}', '{2}', '{3}')", param[0], param[1], param[2], param[3]);
                     qry = InsertFoodGoods;
                     break;
 
@@ -405,7 +413,7 @@ namespace StoreManagement.DbManagment
                 case "InsertFoodCategory":
                     temp = InsertFoodCategory;
 
-                    InsertFoodCategory = String.Format("INSERT INTO FoodCategory(DescriptionCategory) VALUES({0})", param[0]);
+                    InsertFoodCategory = String.Format("INSERT INTO FoodCategory(DescriptionCategory) VALUES('{0}')", param[0]);
                     qry = InsertFoodCategory;
                     break;
 
@@ -433,7 +441,7 @@ namespace StoreManagement.DbManagment
                 case "InsertGoodsImages":
                     temp = InsertGoodsImages;
 
-                    InsertGoodsImages = String.Format("INSERT INTO GoodsImages(IDProduct, ImageSingle, ImageBox) VALUES({0}, {1}, {2})", param[0], param[1], param[2]);
+                    InsertGoodsImages = String.Format("INSERT INTO GoodsImages(IDProduct, ImageSingle, ImageBox) VALUES('{0}', '{1}', '{2}')", param[0], param[1], param[2]);
                     qry = InsertGoodsImages;
                     break;
 
@@ -461,7 +469,7 @@ namespace StoreManagement.DbManagment
                 case "InsertGoodsDimensions":
                     temp = InsertGoodsDimensions;
 
-                    InsertGoodsDimensions = String.Format("INSERT INTO GoodsDimensions(IDProduct, NumbersInBox, DimensionSingleHeight, DimensionSingleBase, DimensionSingleDepth, DimensionBoxHeight, DimensionBoxBase, DimensionBoxDepth, WeightSingle, WightBox) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9]);
+                    InsertGoodsDimensions = String.Format("INSERT INTO GoodsDimensions(IDProduct, NumbersInBox, DimensionSingleHeight, DimensionSingleBase, DimensionSingleDepth, DimensionBoxHeight, DimensionBoxBase, DimensionBoxDepth, WeightSingle, WightBox) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}')", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9]);
                     qry = InsertGoodsDimensions;
                     break;
 
@@ -489,7 +497,7 @@ namespace StoreManagement.DbManagment
                 case "InsertGoodsUpdateValue":
                     temp = InsertGoodsUpdateValue;
 
-                    InsertGoodsUpdateValue = String.Format("INSERT INTO GoodsUpdateValue(DescriptionUpdateValue) VALUES({0})", param[0]);
+                    InsertGoodsUpdateValue = String.Format("INSERT INTO GoodsUpdateValue(DescriptionUpdateValue) VALUES('{0}')", param[0]);
                     qry = InsertGoodsUpdateValue;
                     break;
 
@@ -510,17 +518,17 @@ namespace StoreManagement.DbManagment
                 case "DeleteGoodsUpdateValue":
                     temp = DeleteGoodsUpdateValue;
 
-                    DeleteGoodsUpdateValue = String.Format("DELETE {0} FROM GoodsUpdateValue WHERE {1} = {2}", param[0], param[1], param[2]);
+                    DeleteGoodsUpdateValue = String.Format("DELETE FROM GoodsUpdateValue WHERE {0} = {1}", param[0], param[1]);
                     qry = DeleteGoodsUpdateValue;
                     break;
             }
             return qry;
         }
 
-        public Query(string QueryDaFare, List<String> parametri)
+        public Query(string QueryDaFare, List<String> parametri, string strWhere)
         {
             param = parametri;
-            queryToReturn = SetQuery(QueryDaFare, param);
+            queryToReturn = SetQuery(QueryDaFare, param, strWhere);
         }
 
         public string GetQuery()

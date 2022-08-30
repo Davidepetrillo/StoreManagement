@@ -23,8 +23,6 @@ namespace StoreManagement
 
 
             ConnectionString conn = new ConnectionString();
-            conn.setDBhost(ConfigurationSettings.AppSettings["DB_Host"].ToString().Trim());
-            conn.setDBName(ConfigurationSettings.AppSettings["DB_NAME"].ToString().Trim());
 
             DbClass connection = new DbClass();
             SqlConnection connessione = connection.Connect(conn.GetConnectionString());
