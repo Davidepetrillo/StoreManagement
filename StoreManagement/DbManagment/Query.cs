@@ -30,6 +30,11 @@ namespace StoreManagement.DbManagment
         private string SelectCustomers = string.Empty;
         private string DeleteCustomers = string.Empty;
 
+        private string InsertIntoCustomerState = string.Empty;
+        private string UpdateCustomerState = string.Empty;
+        private string SelectCustomerState = string.Empty;
+        private string DeleteCustomerState = string.Empty;
+
         private string InsertIntoInvoicesHead = string.Empty;
         private string UpdateInvoicesHead = string.Empty;
         private string SelectInvoicesHead = string.Empty;
@@ -49,6 +54,21 @@ namespace StoreManagement.DbManagment
         private string UpdateGoodsImages = string.Empty;
         private string SelectGoodsImages = string.Empty;
         private string DeleteGoodsImages = string.Empty;
+
+        private string InsertFoodGoods = string.Empty;
+        private string UpdateFoodGoods = string.Empty;
+        private string SelectFoodGoods = string.Empty;
+        private string DeleteFoodGoods = string.Empty;
+
+        private string InsertFoodCategory = string.Empty;
+        private string UpdateFoodCategory = string.Empty;
+        private string SelectFoodCategory = string.Empty;
+        private string DeleteFoodCategory = string.Empty;
+
+        private string InsertGoodsDimensions = string.Empty;
+        private string UpdateGoodsDimensions = string.Empty;
+        private string SelectGoodsDimensions = string.Empty;
+        private string DeleteGoodsDimensions = string.Empty;
 
         private string InsertGoodsUpdateValue = string.Empty;
         private string UpdateGoodsUpdateValue = string.Empty;
@@ -176,6 +196,34 @@ namespace StoreManagement.DbManagment
                     qry = DeleteCustomers;
                     break;
 
+                case "InsertIntoCustomerState":
+                    temp = InsertIntoCustomerState;
+
+                    InsertIntoCustomerState = String.Format("INSERT INTO Customer(NameLegalOwner, SurnameLegalOwner, CompanyName, Address, CivicNumber, ZipCode, City, Region, Nation, Phone, Email, PEC, WebSite, SDI_Code, VAT_Code, StatusCustomer) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14], param[15]);
+                    qry = InsertIntoCustomerState;
+                    break;
+
+                case "UpdateCustomerState":
+                    temp = UpdateCustomerState;
+
+                    UpdateCustomerState = String.Format("UPDATE Customer SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    qry = UpdateCustomerState;
+                    break;
+
+                case "SelectCustomerState":
+                    temp = SelectCustomerState;
+
+                    SelectCustomerState = String.Format("Select {0} FROM Customer", param[0]);
+                    qry = SelectCustomerState;
+                    break;
+
+                case "DeleteCustomerState":
+                    temp = DeleteCustomerState;
+
+                    DeleteCustomerState = String.Format("DELETE {0} FROM CustomerState WHERE {1} = {2}", param[0], param[1], param[2]);
+                    qry = DeleteCustomerState;
+                    break;
+
                 case "InsertIntoInvoicesHead":
                     temp = InsertIntoInvoicesHead;
 
@@ -260,6 +308,62 @@ namespace StoreManagement.DbManagment
                     qry = DeleteGoodsValues;
                     break;
 
+                case "InsertFoodGoods":
+                    temp = InsertFoodGoods;
+
+                    InsertFoodGoods = String.Format("INSERT INTO FoodGoods() VALUES({0})", param[0]);
+                    qry = InsertFoodGoods;
+                    break;
+
+                case "UpdateFoodGoods":
+                    temp = UpdateFoodGoods;
+
+                    UpdateFoodGoods = String.Format("UPDATE FoodGoods SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    qry = UpdateFoodGoods;
+                    break;
+
+                case "SelectFoodGoods":
+                    temp = SelectFoodGoods;
+
+                    SelectFoodGoods = String.Format("Select {0} FROM FoodGoods", param[0]);
+                    qry = SelectFoodGoods;
+                    break;
+
+                case "DeleteFoodGoods":
+                    temp = DeleteFoodGoods;
+
+                    DeleteFoodGoods = String.Format("DELETE {0} FROM FoodGoods WHERE {1} = {2}", param[0], param[1], param[2]);
+                    qry = DeleteFoodGoods;
+                    break;
+
+                case "InsertFoodCategory":
+                    temp = InsertFoodCategory;
+
+                    InsertFoodCategory = String.Format("INSERT INTO FoodCategory() VALUES({0})", param[0]);
+                    qry = InsertFoodCategory;
+                    break;
+
+                case "UpdateFoodCategory":
+                    temp = UpdateFoodCategory;
+
+                    UpdateFoodCategory = String.Format("UPDATE FoodCategory SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    qry = UpdateFoodCategory;
+                    break;
+
+                case "SelectFoodCategory":
+                    temp = SelectFoodCategory;
+
+                    SelectFoodCategory = String.Format("Select {0} FROM FoodCategory", param[0]);
+                    qry = SelectFoodCategory;
+                    break;
+
+                case "DeleteFoodCategory":
+                    temp = DeleteFoodCategory;
+
+                    DeleteFoodCategory = String.Format("DELETE {0} FROM FoodCategory WHERE {1} = {2}", param[0], param[1], param[2]);
+                    qry = DeleteFoodCategory;
+                    break;
+
                 case "InsertGoodsImages":
                     temp = InsertGoodsImages;
 
@@ -286,6 +390,34 @@ namespace StoreManagement.DbManagment
 
                     DeleteGoodsImages = String.Format("DELETE {0} FROM GoodsImages WHERE {1} = {2}", param[0], param[1], param[2]);
                     qry = DeleteGoodsImages;
+                    break;
+
+                case "InsertGoodsDimensions":
+                    temp = InsertGoodsDimensions;
+
+                    InsertGoodsDimensions = String.Format("INSERT INTO GoodsDimensions() VALUES({0})", param[0]);
+                    qry = InsertGoodsDimensions;
+                    break;
+
+                case "UpdateGoodsDimensions":
+                    temp = UpdateGoodsDimensions;
+
+                    UpdateGoodsDimensions = String.Format("UPDATE GoodsDimensions SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    qry = UpdateGoodsDimensions;
+                    break;
+
+                case "SelectGoodsDimensions":
+                    temp = SelectGoodsDimensions;
+
+                    SelectGoodsDimensions = String.Format("Select {0} FROM GoodsDimensions", param[0]);
+                    qry = SelectGoodsDimensions;
+                    break;
+
+                case "DeleteGoodsDimensions":
+                    temp = DeleteGoodsDimensions;
+
+                    DeleteGoodsDimensions = String.Format("DELETE {0} FROM GoodsDimensions WHERE {1} = {2}", param[0], param[1], param[2]);
+                    qry = DeleteGoodsDimensions;
                     break;
 
                 case "InsertGoodsUpdateValue":
