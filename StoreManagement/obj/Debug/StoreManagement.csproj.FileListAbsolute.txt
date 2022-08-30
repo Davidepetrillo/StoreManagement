@@ -1,0 +1,24 @@
+D:\BTINKEENG\Projects\Course.NET\StoreManagement\StoreManagement\bin\Debug\StoreManagement.exe.config
+D:\BTINKEENG\Projects\Course.NET\StoreManagement\StoreManagement\bin\Debug\StoreManagement.exe
+D:\BTINKEENG\Projects\Course.NET\StoreManagement\StoreManagement\bin\Debug\StoreManagement.pdb
+D:\BTINKEENG\Projects\Course.NET\StoreManagement\StoreManagement\obj\Debug\StoreManagement.csproj.AssemblyReference.cache
+D:\BTINKEENG\Projects\Course.NET\StoreManagement\StoreManagement\obj\Debug\StoreManagement.csproj.SuggestedBindingRedirects.cache
+D:\BTINKEENG\Projects\Course.NET\StoreManagement\StoreManagement\obj\Debug\StoreManagement.Form1.resources
+D:\BTINKEENG\Projects\Course.NET\StoreManagement\StoreManagement\obj\Debug\StoreManagement.Properties.Resources.resources
+D:\BTINKEENG\Projects\Course.NET\StoreManagement\StoreManagement\obj\Debug\StoreManagement.csproj.GenerateResource.cache
+D:\BTINKEENG\Projects\Course.NET\StoreManagement\StoreManagement\obj\Debug\StoreManagement.csproj.CoreCompileInputs.cache
+D:\BTINKEENG\Projects\Course.NET\StoreManagement\StoreManagement\obj\Debug\StoreManagement.exe
+D:\BTINKEENG\Projects\Course.NET\StoreManagement\StoreManagement\obj\Debug\StoreManagement.pdb
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\bin\Debug\App.config
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\bin\Debug\StoreManagement.exe.config
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\bin\Debug\StoreManagement.exe
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\bin\Debug\StoreManagement.pdb
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\obj\Debug\StoreManagement.csproj.AssemblyReference.cache
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\obj\Debug\StoreManagement.csproj.SuggestedBindingRedirects.cache
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\obj\Debug\StoreManagement.Form1.resources
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\obj\Debug\StoreManagement.Properties.Resources.resources
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\obj\Debug\StoreManagement.WinInvoices.resources
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\obj\Debug\StoreManagement.csproj.GenerateResource.cache
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\obj\Debug\StoreManagement.csproj.CoreCompileInputs.cache
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\obj\Debug\StoreManagement.exe
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\obj\Debug\StoreManagement.pdb
