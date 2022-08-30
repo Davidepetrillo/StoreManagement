@@ -102,7 +102,7 @@ namespace StoreManagement.DbManagment
                 case "InsertIntoCustomers":
                     temp = InsertIntoCustomers;
 
-                    InsertIntoCustomers = String.Format("INSERT INTO Customers() VALUES({0})", param[0]);
+                    InsertIntoCustomers = String.Format("INSERT INTO Customers(NameLegalOwner,SurnameLegalOwner,CompanyName,Address,CivicNumber,ZipCode,City,Region,Nation,Phone,Email,PEC,WebSite,SDI_Code,VAT_Code,StatusCustomer) VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14], param[15]);
                     qry = InsertIntoCustomers;
                     break;
 
