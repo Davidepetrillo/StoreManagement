@@ -9,10 +9,16 @@ namespace StoreManagement.DbManagment
     public class Query
     {
         private List<String> param = new List<String>();
+
         private string InsertIntoMovements = string.Empty;
         private string UpdateMovements = string.Empty;
         private string SelectMovements = string.Empty;
         private string DeleteMovements = string.Empty;
+
+        private string InsertIntoTypeMovements = string.Empty;
+        private string UpdateTypeMovements = string.Empty;
+        private string SelectTypeMovements = string.Empty;
+        private string DeleteTypeMovements = string.Empty;
 
         private string InsertIntoSuppliers = string.Empty;
         private string UpdateSuppliers = string.Empty;
@@ -24,15 +30,30 @@ namespace StoreManagement.DbManagment
         private string SelectCustomers = string.Empty;
         private string DeleteCustomers = string.Empty;
 
-        private string InsertIntoInvoices = string.Empty;
-        private string UpdateInvoices = string.Empty;
-        private string SelectInvoices = string.Empty;
-        private string DeleteInvoices = string.Empty;
+        private string InsertIntoInvoicesHead = string.Empty;
+        private string UpdateInvoicesHead = string.Empty;
+        private string SelectInvoicesHead = string.Empty;
+        private string DeleteInvoicesHead = string.Empty;
 
-        private string InsertGoods = string.Empty;
-        private string UpdateGoods = string.Empty;
-        private string SelectGoods = string.Empty;
-        private string DeleteGoods = string.Empty;
+        private string InsertIntoInvoicesRows = string.Empty;
+        private string UpdateInvoicesRows = string.Empty;
+        private string SelectInvoicesRows = string.Empty;
+        private string DeleteInvoicesRows = string.Empty;
+
+        private string InsertGoodsValues = string.Empty;
+        private string UpdateGoodsValues = string.Empty;
+        private string SelectGoodsValues = string.Empty;
+        private string DeleteGoodsValues = string.Empty;
+
+        private string InsertGoodsImages = string.Empty;
+        private string UpdateGoodsImages = string.Empty;
+        private string SelectGoodsImages = string.Empty;
+        private string DeleteGoodsImages = string.Empty;
+
+        private string InsertGoodsUpdateValue = string.Empty;
+        private string UpdateGoodsUpdateValue = string.Empty;
+        private string SelectGoodsUpdateValue = string.Empty;
+        private string DeleteGoodsUpdateValue = string.Empty;
 
 
         private string queryToReturn = string.Empty;
@@ -46,7 +67,7 @@ namespace StoreManagement.DbManagment
                 case "InsertIntoMovements":
                     string temp = InsertIntoMovements;
 
-                    InsertIntoMovements = String.Format("INSERT INTO Movements(IDCustomer,IDSupplier,IDProduct,Qta,Price,DiscountPercentage,DiscountLimitNumbers,NetCost,NetNetCost,DateMovement,TypeMovement) VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
+                    InsertIntoMovements = String.Format("INSERT INTO Movements(IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
                     qry = InsertIntoMovements;
                     break;
 
@@ -71,10 +92,38 @@ namespace StoreManagement.DbManagment
                     qry = DeleteMovements;
                     break;
 
+                case "InsertIntoTypeMovements":
+                    temp = InsertIntoTypeMovements;
+
+                    InsertIntoTypeMovements = String.Format("INSERT INTO TypeMovements(IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
+                    qry = InsertIntoTypeMovements;
+                    break;
+
+                case "UpdateTypeMovements":
+                    temp = UpdateTypeMovements;
+
+                    UpdateTypeMovements = String.Format("UPDATE TypeMovements SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    qry = UpdateTypeMovements;
+                    break;
+
+                case "SelectTypeMovements":
+                    temp = SelectTypeMovements;
+
+                    SelectTypeMovements = String.Format("Select {0} FROM TypeMovements", param[0]);
+                    qry = SelectTypeMovements;
+                    break;
+
+                case "DeleteTypeMovements":
+                    temp = DeleteTypeMovements;
+
+                    DeleteTypeMovements = String.Format("DELETE {0} FROM TypeMovements WHERE {1} = {2}", param[0], param[1], param[2]);
+                    qry = DeleteTypeMovements;
+                    break;
+
                 case "InsertIntoSuppliers":
                     temp = InsertIntoSuppliers;
 
-                    InsertIntoSuppliers = String.Format("INSERT INTO Suppliers(NameLegalOwner,SurnameLegalOwner,CompanyName,Address,CivicNumber,ZipCode,City,Region,Nation,Phone,Email,PEC,WebSite,SDI_Code,VAT_Code) VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14] );
+                    InsertIntoSuppliers = String.Format("INSERT INTO Suppliers(NameLegalOwner, SurnameLegalOwner, CompanyName, Address, CivicNumber, ZipCode, City, Region, Nation, Phone, Email, PEC, WebSite, SDI_Code, VAT_Code) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14] );
                     qry = InsertIntoSuppliers;
                     break;
 
@@ -102,7 +151,7 @@ namespace StoreManagement.DbManagment
                 case "InsertIntoCustomers":
                     temp = InsertIntoCustomers;
 
-                    InsertIntoCustomers = String.Format("INSERT INTO Customers(NameLegalOwner,SurnameLegalOwner,CompanyName,Address,CivicNumber,ZipCode,City,Region,Nation,Phone,Email,PEC,WebSite,SDI_Code,VAT_Code,StatusCustomer) VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14], param[15]);
+                    InsertIntoCustomers = String.Format("INSERT INTO Customers(NameLegalOwner, SurnameLegalOwner, CompanyName, Address, CivicNumber, ZipCode, City, Region, Nation, Phone, Email, PEC, WebSite, SDI_Code, VAT_Code, StatusCustomer) VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15})", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14], param[15]);
                     qry = InsertIntoCustomers;
                     break;
 
@@ -127,60 +176,144 @@ namespace StoreManagement.DbManagment
                     qry = DeleteCustomers;
                     break;
 
-                case "InsertIntoInvoices":
-                    temp = InsertIntoInvoices;
+                case "InsertIntoInvoicesHead":
+                    temp = InsertIntoInvoicesHead;
 
-                    InsertIntoInvoices = String.Format("INSERT INTO Invoices() VALUES({0})", param[0]);
-                    qry = InsertIntoInvoices;
+                    InsertIntoInvoicesHead = String.Format("INSERT INTO InvoicesHead() VALUES({0})", param[0]);
+                    qry = InsertIntoInvoicesHead;
                     break;
 
-                case "UpdateInvoices":
-                    temp = UpdateInvoices;
+                case "UpdateInvoicesHead":
+                    temp = UpdateInvoicesHead;
 
-                    UpdateInvoices = String.Format("UPDATE Invoices SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
-                    qry = UpdateInvoices;
+                    UpdateInvoicesHead = String.Format("UPDATE InvoicesHead SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    qry = UpdateInvoicesHead;
                     break;
 
-                case "SelectInvoices":
-                    temp = SelectInvoices;
+                case "SelectInvoicesHead":
+                    temp = SelectInvoicesHead;
 
-                    SelectInvoices = String.Format("Select {0} FROM Invoices", param[0]);
-                    qry = SelectInvoices;
+                    SelectInvoicesHead = String.Format("Select {0} FROM InvoicesHead", param[0]);
+                    qry = SelectInvoicesHead;
                     break;
 
-                case "DeleteInvoices":
-                    temp = DeleteInvoices;
+                case "DeleteInvoicesHead":
+                    temp = DeleteInvoicesHead;
 
-                    DeleteInvoices = String.Format("DELETE {0} FROM Invoices WHERE {1} = {2}", param[0], param[1], param[2]);
-                    qry = DeleteInvoices;
+                    DeleteInvoicesHead = String.Format("DELETE {0} FROM InvoicesHead WHERE {1} = {2}", param[0], param[1], param[2]);
+                    qry = DeleteInvoicesHead;
                     break;
 
-                case "InsertGoods":
-                    temp = InsertGoods;
+                case "InsertIntoInvoicesRows":
+                    temp = InsertIntoInvoicesRows;
 
-                    InsertGoods = String.Format("INSERT INTO Goods() VALUES({0})", param[0]);
-                    qry = InsertGoods;
+                    InsertIntoInvoicesRows = String.Format("INSERT INTO InvoicesRows() VALUES({0})", param[0]);
+                    qry = InsertIntoInvoicesRows;
                     break;
 
-                case "UpdateGoods":
-                    temp = UpdateGoods;
+                case "UpdateInvoicesRows":
+                    temp = UpdateInvoicesRows;
 
-                    UpdateGoods = String.Format("UPDATE Goods SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
-                    qry = UpdateGoods;
+                    UpdateInvoicesRows = String.Format("UPDATE InvoicesRows SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    qry = UpdateInvoicesRows;
                     break;
 
-                case "SelectGoods":
-                    temp = SelectGoods;
+                case "SelectInvoicesRows":
+                    temp = SelectInvoicesRows;
 
-                    SelectGoods = String.Format("Select {0} FROM Goods", param[0]);
-                    qry = SelectGoods;
+                    SelectInvoicesRows = String.Format("Select {0} FROM InvoicesRows", param[0]);
+                    qry = SelectInvoicesRows;
                     break;
 
-                case "DeleteGoods":
-                    temp = DeleteGoods;
+                case "DeleteInvoicesRows":
+                    temp = DeleteInvoicesRows;
 
-                    DeleteGoods = String.Format("DELETE {0} FROM Goods WHERE {1} = {2}", param[0], param[1], param[2]);
-                    qry = DeleteGoods;
+                    DeleteInvoicesRows = String.Format("DELETE {0} FROM InvoicesRows WHERE {1} = {2}", param[0], param[1], param[2]);
+                    qry = DeleteInvoicesRows;
+                    break;
+
+                case "InsertGoodsValues":
+                    temp = InsertGoodsValues;
+
+                    InsertGoodsValues = String.Format("INSERT INTO GoodsValues() VALUES({0})", param[0]);
+                    qry = InsertGoodsValues;
+                    break;
+
+                case "UpdateGoodsValues":
+                    temp = UpdateGoodsValues;
+
+                    UpdateGoodsValues = String.Format("UPDATE GoodsValues SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    qry = UpdateGoodsValues;
+                    break;
+
+                case "SelectGoodsValues":
+                    temp = SelectGoodsValues;
+
+                    SelectGoodsValues = String.Format("Select {0} FROM GoodsValues", param[0]);
+                    qry = SelectGoodsValues;
+                    break;
+
+                case "DeleteGoodsValues":
+                    temp = DeleteGoodsValues;
+
+                    DeleteGoodsValues = String.Format("DELETE {0} FROM GoodsValues WHERE {1} = {2}", param[0], param[1], param[2]);
+                    qry = DeleteGoodsValues;
+                    break;
+
+                case "InsertGoodsImages":
+                    temp = InsertGoodsImages;
+
+                    InsertGoodsImages = String.Format("INSERT INTO GoodsImages() VALUES({0})", param[0]);
+                    qry = InsertGoodsImages;
+                    break;
+
+                case "UpdateGoodsImages":
+                    temp = UpdateGoodsImages;
+
+                    UpdateGoodsImages = String.Format("UPDATE GoodsImages SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    qry = UpdateGoodsImages;
+                    break;
+
+                case "SelectGoodsImages":
+                    temp = SelectGoodsImages;
+
+                    SelectGoodsImages = String.Format("Select {0} FROM GoodsImages", param[0]);
+                    qry = SelectGoodsImages;
+                    break;
+
+                case "DeleteGoodsImages":
+                    temp = DeleteGoodsImages;
+
+                    DeleteGoodsImages = String.Format("DELETE {0} FROM GoodsImages WHERE {1} = {2}", param[0], param[1], param[2]);
+                    qry = DeleteGoodsImages;
+                    break;
+
+                case "InsertGoodsUpdateValue":
+                    temp = InsertGoodsUpdateValue;
+
+                    InsertGoodsUpdateValue = String.Format("INSERT INTO GoodsUpdateValue() VALUES({0})", param[0]);
+                    qry = InsertGoodsUpdateValue;
+                    break;
+
+                case "UpdateGoodsUpdateValue":
+                    temp = UpdateGoodsUpdateValue;
+
+                    UpdateGoodsUpdateValue = String.Format("UPDATE GoodsUpdateValue SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    qry = UpdateGoodsUpdateValue;
+                    break;
+
+                case "SelectGoodsUpdateValue":
+                    temp = SelectGoodsUpdateValue;
+
+                    SelectGoodsUpdateValue = String.Format("Select {0} FROM GoodsUpdateValue", param[0]);
+                    qry = SelectGoodsUpdateValue;
+                    break;
+
+                case "DeleteGoodsUpdateValue":
+                    temp = DeleteGoodsUpdateValue;
+
+                    DeleteGoodsUpdateValue = String.Format("DELETE {0} FROM GoodsUpdateValue WHERE {1} = {2}", param[0], param[1], param[2]);
+                    qry = DeleteGoodsUpdateValue;
                     break;
             }
             return qry;
