@@ -89,13 +89,136 @@ namespace StoreManagement.DbManagment
 
         private string queryToReturn = string.Empty;
 
+        private List<String> Condition = new List<String>();
+        private List<String> WhereParameters = new List<String>();
+        private List<String> SelectCondition = new List<String>();
 
-        public string SetStrWhere(string str, List<String> paramWhere)
+        private string WCArchiveGoodsValue = string.Empty;
+
+        private string WPArchiveGoodsValue = string.Empty;
+        private string wcaToReturn = string.Empty;
+
+
+
+        private string SCArchiveGoodsValue = string.Empty;
+        private string SelectConditionParameters = string.Empty;
+        private string scpToReturn = string.Empty;
+        public string SetWhereCondition(string WhereCondition)
         {
-            str = String.Format("WHERE {0} = {1}", param[0] = , param[1]);
-            return strWhere;
+            string Cond = string.Empty;
+            string temp = string.Empty;
+
+            switch (int.Parse(WhereCondition))
+            {
+    
+                case 1:
+                    SetWhereParameters(01, WhereParameters);
+                    temp = WCArchiveGoodsValue;
+                    WCArchiveGoodsValue = "WHERE IDProduct " + GetWhereParameters();
+                    Cond = WCArchiveGoodsValue;
+                    break;
+
+                case 2:
+                    SetWhereParameters(01, WhereParameters);
+                    temp = WCArchiveGoodsValue;
+                    WCArchiveGoodsValue = "WHERE VAT " + GetWhereParameters();
+                    Cond = WCArchiveGoodsValue;
+                    break;
+                case 3:
+                    SetWhereParameters(02, WhereParameters);
+                    temp = WCArchiveGoodsValue;
+                    WCArchiveGoodsValue = "WHERE Price " + GetWhereParameters();
+                    Cond = WCArchiveGoodsValue;
+                    break;
+                case 4:
+                    SetWhereParameters(03, WhereParameters);
+                    temp = WCArchiveGoodsValue;
+                    WCArchiveGoodsValue = "WHERE DateOldValue " + GetWhereParameters();
+                    Cond = WCArchiveGoodsValue;
+                    break;
+
+                default:
+
+                    throw new Exception();
+
+            }
+            return Cond;
         }
 
+        public Query(string WhereCondition)
+        {
+            wcaToReturn = SetWhereCondition(WhereCondition);
+        }
+        public string GetWhereCondition()
+        {
+            return wcaToReturn;
+        }
+        public string SetWhereParameters(int NumWhereParameters, List<String> WParameters)
+        {
+            string WParam = string.Empty;
+            string temp = string.Empty;
+
+            switch (NumWhereParameters)
+            {
+                case 01:
+                    temp = WPArchiveGoodsValue;
+                    WPArchiveGoodsValue = String.Format(" = '{0}' ", WParameters[0]);
+                    WParam = WPArchiveGoodsValue;
+                    break;
+
+                case 02:
+                    temp = WPArchiveGoodsValue;
+                    WPArchiveGoodsValue = String.Format(" < '{0}' ", WParameters[0]);
+                    WParam = WPArchiveGoodsValue;
+                    break;
+                case 03:
+                    temp = WPArchiveGoodsValue;
+                    WPArchiveGoodsValue = String.Format(" BETWEEN  '{0}' AND '{1}' ", WParameters[0], WParameters[1]);
+                    WParam = WPArchiveGoodsValue;
+                    break;
+
+                default:
+
+                    throw new Exception();
+
+            }
+            return WParam;
+        }
+        public Query(int NumWhereParameters, List<String> WParameters)
+        {
+            WhereParameters = WParameters;
+            wcaToReturn = SetWhereParameters(NumWhereParameters, WhereParameters);
+        }
+        public string GetWhereParameters()
+        {
+            return wcaToReturn;
+        }
+
+
+        public string SetSelectCondition(int NumSelectCondition, List<String> SCParameters)
+        {
+            string SCparam = string.Empty;
+            string temp = string.Empty;
+
+            switch (NumSelectCondition)
+            {
+          
+                case 01:
+                    temp = SCArchiveGoodsValue;
+                    SCArchiveGoodsValue = String.Format(" IDProduct, VAT, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateOldValue ", SCParameters[0]);
+                    SCparam = SCArchiveGoodsValue;
+                    break;
+
+                default:
+
+                    throw new Exception();
+
+            }
+            return SCparam;
+        }
+
+
+        
         public string SetQuery(string QueryDaFare, List<String> parametri, string stringaWhere)
         {
             string qry = string.Empty;
@@ -112,14 +235,14 @@ namespace StoreManagement.DbManagment
                 case "UpdateMovements":
                     temp = UpdateMovements;
 
-                    UpdateMovements = String.Format("UPDATE Movements SET {0} = {1} " + stringaWhere, param[0], param[1]);
+                    UpdateMovements = String.Format("UPDATE Movements SET (IDCustomer) = ('{0}'), (IDSupplier) = ('{1}'),  (IDProduct) = ('{2}'),  (Qta) = ('{3}'),  (Price) = ('{4}'),  (DiscountPercentage) = ('{5}'),  (DiscountLimitNumbers) = ('{6}'),  (NetCost) = ('{7}'),  (NetNetCost) = ('{8}'),  (DateMovement) = ('{9}'),  (TypeMovement) = ('{10}')  " + stringaWhere, param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
                     qry = UpdateMovements;
                     break;
 
                 case "SelectMovements":
                     temp = SelectMovements;
 
-                    SelectMovements = String.Format("Select {0} FROM Movements", param[0]);
+                    SelectMovements = String.Format("Select (IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement) FROM Movements" + stringaWhere);
                     qry = SelectMovements;
                     break;
 
@@ -140,21 +263,21 @@ namespace StoreManagement.DbManagment
                 case "UpdateArchiveMovements":
                     temp = UpdateArchiveMovements;
 
-                    UpdateArchiveMovements = String.Format("UPDATE ArchiveMovements SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    UpdateArchiveMovements = String.Format("UPDATE ArchiveMovements SET (IDCustomer) = ('{0}'), SET (IDSupplier) = ('{1}'), SET (IDProduct) = ('{2}'), SET (Qta) = ('{3}'), SET (Price) = ('{4}'), SET (DiscountPercentage) = ('{5}'), SET (DiscountLimitNumbers) = ('{6}'), SET (NetCost) = ('{7}'), SET (NetNetCost) = ('{8}'), SET (DateMovement) = ('{9}'), SET (TypeMovement) = ('{10}')  " + stringaWhere, param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
                     qry = UpdateArchiveMovements;
                     break;
 
                 case "SelectArchiveMovements":
                     temp = SelectArchiveMovements;
 
-                    SelectArchiveMovements = String.Format("Select {0} FROM ArchiveMovements", param[0]);
+                    SelectArchiveMovements = String.Format("Select (IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement) FROM ArchiveMovements" + stringaWhere);
                     qry = SelectArchiveMovements;
                     break;
 
                 case "DeleteArchiveMovements":
                     temp = DeleteArchiveMovements;
 
-                    DeleteArchiveMovements = String.Format("DELETE {0} FROM ArchiveMovements WHERE {1} = {2}", param[0], param[1], param[2]);
+                    DeleteArchiveMovements = String.Format("DELETE FROM ArchiveMovements" + stringaWhere);
                     qry = DeleteArchiveMovements;
                     break;
 
@@ -168,21 +291,21 @@ namespace StoreManagement.DbManagment
                 case "UpdateArchiveGoodsValue":
                     temp = UpdateArchiveGoodsValue;
 
-                    UpdateArchiveGoodsValue = String.Format("UPDATE ArchiveGoodsValue SET {0} = {1} WHERE {2} = {3}", param[0], param[1], param[2], param[3]);
+                    UpdateArchiveGoodsValue = String.Format("UPDATE ArchiveGoodsValue SET() " + stringaWhere, param[0], param[1], param[2], param[3]);
                     qry = UpdateArchiveGoodsValue;
                     break;
 
                 case "SelectArchiveGoodsValue":
                     temp = SelectArchiveGoodsValue;
 
-                    SelectArchiveGoodsValue = String.Format("Select {0} FROM ArchiveGoodsValue", param[0]);
+                    SelectArchiveGoodsValue = String.Format("Select (IDProduct, VAT, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateOldValue) FROM ArchiveGoodsValue" + stringaWhere);
                     qry = SelectArchiveGoodsValue;
                     break;
 
                 case "DeleteArchiveGoodsValue":
                     temp = DeleteArchiveGoodsValue;
 
-                    DeleteArchiveGoodsValue = String.Format("DELETE {0} FROM ArchiveGoodsValue WHERE {1} = {2}", param[0], param[1], param[2]);
+                    DeleteArchiveGoodsValue = String.Format("DELETE FROM ArchiveGoodsValue" + stringaWhere);
                     qry = DeleteArchiveGoodsValue;
                     break;
 
@@ -540,3 +663,123 @@ namespace StoreManagement.DbManagment
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * public string SetStrWhere(string Table, string str, List<String> paramWhere)
+        {
+            string stringWhere = string.Empty;
+
+            switch (Table)
+            {
+                case "Movements":
+                    string temp = strWhere;
+                    strWhere = String.Format("WHERE IDCustomer = ('{0}') AND IDSupplier = ('{1}') AND IDProduct = ('{2}') AND Qta = ('{3}') AND Price = ('{4}') AND DiscountPercentage = ('{5}') AND DiscountLimitNumbers = ('{6}') AND NetCost = ('{7}') AND NetNetCost = ('{8}') AND DateMovement = ('{9}') AND TypeMovement = ('{10}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
+                    stringWhere = strWhere;
+                    break;
+
+                case "ArchiveMovements":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE IDCustomer = ('{0}') AND IDSupplier = ('{1}') AND IDProduct = ('{2}') AND Qta = ('{3}') AND Price = ('{4}') AND DiscountPercentage = ('{5}') AND DiscountLimitNumbers = ('{6}') AND NetCost = ('{7}') AND NetNetCost = ('{8}') AND DateMovement = ('{9}') AND TypeMovement = ('{10}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
+                    stringWhere = strWhere;
+                    break;
+
+                case "ArchiveGoodsValue":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE IDProduct = ('{0}') AND VAT = ('{1}') AND Price = ('{2}') AND DiscountPercentage = ('{3}') AND DiscountLimitNumbers = ('{4}') AND NetCost = ('{5}') AND NetNetCost = ('{6}') AND DateOldValue = ('{7}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7]);
+                    stringWhere = strWhere;
+                    break;
+
+                case "TypeMovements":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE DescriptionMovement = ('{0}')) ", param[0]);
+                    break;
+
+                case "Suppliers":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE NameLegalOwner = ('{0}') AND SurnameLegalOwner = ('{1}') AND CompanyName = ('{2}') AND Address = ('{3}') AND CivicNumber = ('{4}') AND ZipCode = ('{5}') AND City = ('{6}') AND Region = ('{7}') AND Nation = ('{8}') AND Phone = ('{9}') AND Email = ('{10}') AND PEC = ('{11}') AND WebSite = ('{12}') AND SDI_Code = ('{13}') AND VAT_Code = ('{14}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14]);
+                    stringWhere = strWhere;
+                    break;
+
+                case "Customers":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE NameLegalOwner = ('{0}') AND SurnameLegalOwner = ('{1}') AND CompanyName = ('{2}') AND Address = ('{3}') AND CivicNumber = ('{4}') AND ZipCode = ('{5}') AND City = ('{6}') AND Region = ('{7}') AND Nation = ('{8}') AND Phone = ('{9}') AND Email = ('{10}') AND PEC = ('{11}') AND WebSite = ('{12}') AND SDI_Code = ('{13}') AND VAT_Code = ('{14}' AND StatusCustomer = ('{15}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14], param[15]);
+                    stringWhere = strWhere;
+                    break;
+
+                case "CustomerState":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE StatusDescription = ('{0}')) ", param[0]);
+                    stringWhere = strWhere;
+                    break;
+
+                case "InvoicesHead":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE IDCustomer = ('{0}') AND TotalPrice = ('{1}') AND DiscountedPrice = ('{2}') ) ", param[0], param[1], param[2]);
+                    stringWhere = strWhere;
+                    break;
+
+                case "InvoicesRows":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE IDInvoice = ('{0}') AND IDProduct = ('{1}') AND Qta = ('{2}') AND Price = ('{3}') AND VAT = ('{4}') AND PriceSubTotal = ('{5}') AND TotalQta = ('{6}') ) ", param[0], param[1], param[2], param[3], param[4], param[5], param[6]);
+                    stringWhere = strWhere;
+                    break;
+
+                case "GoodsValues":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE IDProduct = ('{0}') AND VAT = ('{1}') AND Price = ('{2}') AND DiscountPercentage = ('{3}') AND DiscountLimitNumbers = ('{4}') AND NetCost = ('{5}') AND NetNetCost = ('{6}') AND DateUpdateValue = ('{7}') AND TypeUpdateValue = ('{8}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8]);
+                    stringWhere = strWhere;
+                    break;
+
+                case "GoodsImages":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE IDProduct = ('{0}') AND ImageSingle = ('{1}') AND ImageBox = ('{2}') ", param[0], param[1], param[2]);
+                    stringWhere = strWhere;
+                    break;
+
+                case "FoodGoods":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE DescriptionProduct = ('{0}') AND EAN = ('{1}') AND IDSupplier = ('{2}') AND IDCategory = ('{3}') ) ", param[0], param[1], param[2], param[3] );
+                    stringWhere = strWhere;
+                    break;
+
+                case "FoodCategory":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE DescriptionCategory = ('{0}')) ", param[0]);
+                    stringWhere = strWhere;
+                    break;
+
+                case "GoodsDimensions":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE IDProduct = ('{0}') AND NumbersInBox = ('{1}') AND DimensionSingleHeight = ('{2}') AND DimensionSingleBase = ('{3}') AND DimensionSingleDepth = ('{4}') AND DimensionBoxHeight = ('{5}') AND DimensionBoxBase = ('{6}') AND WeightSingle = ('{7}') AND WightBox = ('{8}') ) ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8] );
+                    stringWhere = strWhere;
+                    break;
+
+                case "GoodsUpdateValue":
+                    temp = strWhere;
+                    strWhere = String.Format("WHERE IDCustomer = ('{0}') AND IDSupplier = ('{1}') AND IDProduct = ('{2}') AND Qta = ('{3}') AND Price = ('{4}') AND DiscountPercentage = ('{5}') AND DiscountLimitNumbers = ('{6}') AND NetCost = ('{7}') AND NetNetCost = ('{8}') AND DateMovement = ('{9}') AND TypeMovement = ('{10}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
+                    stringWhere = strWhere;
+                    break;
+
+
+            }
+
+            return stringWhere;
+        }
+
+        public string GetWhereString()
+        {
+            return strWhere;
+        }
+
+*/
