@@ -49,6 +49,7 @@
     <Compile Include="DbManagment\ConnectionString.cs" />
     <Compile Include="DbManagment\DbClass.cs" />
     <Compile Include="DbManagment\Query.cs" />
+    <Compile Include="DbManagment\QueryTest.cs" />
     <Compile Include="Eccezioni\EnumExceptions.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

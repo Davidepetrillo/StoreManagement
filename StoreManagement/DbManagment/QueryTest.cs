@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace StoreManagement.DbManagment
 {
-    public class Query
+    public class QueryTest
     {
+
         private List<String> param = new List<String>();
 
         private string InsertIntoMovements = string.Empty;
@@ -85,85 +86,218 @@ namespace StoreManagement.DbManagment
         private string SelectGoodsUpdateValue = string.Empty;
         private string DeleteGoodsUpdateValue = string.Empty;
 
-        private string strWhere = string.Empty;
+        private string WhereConditionArchiveGoodsValue = string.Empty;
 
-        private string queryToReturn = string.Empty;
+        private string WhereParametersArchiveGoodsValue = string.Empty;
 
-        private List<String> Condition = new List<String>();
+        private string WhereParametersArchiveGoodsValueAND = string.Empty;
+
+        private string WhereParametersArchiveGoodsValueOR = string.Empty;
+
+        private string WhereConditionToReturn = string.Empty;
+
+        private string WhereParametersToReturn = string.Empty;
+
+
         private List<String> WhereParameters = new List<String>();
-        private List<String> SelectCondition = new List<String>();
 
-        private string WCArchiveGoodsValue = string.Empty;
-
-        private string WPArchiveGoodsValue = string.Empty;
-        private string wcaToReturn = string.Empty;
+        private List<String> DataColumnArchiveGoodsValue = new List<String>() { "IDProduct", "VAT", "Price", "DiscountPercentage", "DiscountLimitNumbers", "NetCost", "NetNetCost", "DateOldValue" };
 
 
 
-        private string SCArchiveGoodsValue = string.Empty;
-        private string SelectConditionParameters = string.Empty;
-        private string scpToReturn = string.Empty;
-        public string SetWhereCondition(string WhereCondition)
+        public string SetArchiveGoodsValueWhereParameters(int caseToAnalyze, List<String> WParameters)
+        {
+            string WhereParams = string.Empty;
+            WhereParametersArchiveGoodsValue = String.Format(" '{0}' ", WParameters[0]);
+
+            switch (caseToAnalyze)
+            {
+                case 1:         
+                    WhereParams = WhereParametersArchiveGoodsValue;
+                    break;
+                case 2:
+                    WhereParametersArchiveGoodsValueAND = string.Format(" AND Price = '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 3:
+                    WhereParametersArchiveGoodsValueAND = string.Format(" AND Price > '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 4:
+                    WhereParametersArchiveGoodsValueAND = string.Format(" AND Price < '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 5:
+                    WhereParametersArchiveGoodsValueAND = string.Format(" AND VAT = '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 6:
+                    WhereParametersArchiveGoodsValueAND = string.Format(" AND VAT > '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 7:
+                    WhereParametersArchiveGoodsValueAND = string.Format(" AND VAT < '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 8:
+                    WhereParametersArchiveGoodsValueAND = string.Format(" AND DateOldValue = '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 9:
+                    WhereParametersArchiveGoodsValueAND = string.Format(" AND DateOldValue > '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 10:
+                    WhereParametersArchiveGoodsValueAND = string.Format(" AND DateOldValue < '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 11:
+                    WhereParametersArchiveGoodsValueOR = string.Format(" OR Price = '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 12:
+                    WhereParametersArchiveGoodsValueOR = string.Format(" OR Price > '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 13:
+                    WhereParametersArchiveGoodsValueOR = string.Format(" OR Price < '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 14:
+                    WhereParametersArchiveGoodsValueOR = string.Format(" OR VAT = '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 15:
+                    WhereParametersArchiveGoodsValueOR = string.Format(" OR VAT > '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 16:
+                    WhereParametersArchiveGoodsValueOR = string.Format(" OR VAT < '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 17:
+                    WhereParametersArchiveGoodsValueOR = string.Format(" OR DateOldValue = '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 18:
+                    WhereParametersArchiveGoodsValueOR = string.Format(" OR DateOldValue > '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+                case 19:
+                    WhereParametersArchiveGoodsValueOR = string.Format(" OR DateOldValue < '{1}'", WParameters[1]);
+                    WhereParams = WhereParametersArchiveGoodsValue + WhereParametersArchiveGoodsValueAND;
+                    break;
+            }
+
+
+            return WhereParams;
+        }
+
+
+        public QueryTest(int NumWhereParameters, List<String> WParameters)
+        {
+            WhereParameters = WParameters;
+            WhereParametersToReturn = SetArchiveGoodsValueWhereParameters(NumWhereParameters, WhereParameters);
+        }
+
+        public string GetWhereParameters()
+        {
+            return WhereParametersToReturn;
+        }
+
+        
+
+        public string SetArchiveGoodsValueWhereCondition(int dataToAnalyze)
         {
             string Cond = string.Empty;
             string temp = string.Empty;
 
-            switch (int.Parse(WhereCondition))
+            switch (dataToAnalyze)
             {
-    
-                case 1:
-                    temp = WCArchiveGoodsValue;
-                    WCArchiveGoodsValue = "WHERE IDProduct " + GetWhereParameters();
-                    Cond = WCArchiveGoodsValue;
+                case 0:
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE IDValue = " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
                     break;
-
+                case 1:
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE IDProduct = " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
+                    break;
                 case 2:
-                    temp = WCArchiveGoodsValue;
-                    WCArchiveGoodsValue = "WHERE VAT > " + GetWhereParameters();
-                    Cond = WCArchiveGoodsValue;
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE VAT = " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
                     break;
                 case 3:
-                    temp = WCArchiveGoodsValue;
-                    WCArchiveGoodsValue = "WHERE Price > " + GetWhereParameters();
-                    Cond = WCArchiveGoodsValue;
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE Price = " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
                     break;
                 case 4:
-                    SetWhereParameters(03, WhereParameters);
-                    temp = WCArchiveGoodsValue;
-                    WCArchiveGoodsValue = "WHERE DateOldValue > " + GetWhereParameters();
-                    Cond = WCArchiveGoodsValue;
-                    break;              
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE DateOldValue = " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
+                    break;
                 case 5:
-                    temp = WCArchiveGoodsValue;
-                    WCArchiveGoodsValue = "WHERE VAT = " + GetWhereParameters();
-                    Cond = WCArchiveGoodsValue;
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE VAT > " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
                     break;
                 case 6:
-                    temp = WCArchiveGoodsValue;
-                    WCArchiveGoodsValue = "WHERE Price = " + GetWhereParameters();
-                    Cond = WCArchiveGoodsValue;
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE Price > " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
                     break;
                 case 7:
-                    SetWhereParameters(03, WhereParameters);
-                    temp = WCArchiveGoodsValue;
-                    WCArchiveGoodsValue = "WHERE DateOldValue = " + GetWhereParameters();
-                    Cond = WCArchiveGoodsValue;
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE DateOldValue > " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
                     break;
                 case 8:
-                    temp = WCArchiveGoodsValue;
-                    WCArchiveGoodsValue = "WHERE VAT < " + GetWhereParameters();
-                    Cond = WCArchiveGoodsValue;
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE VAT < " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
                     break;
                 case 9:
-                    temp = WCArchiveGoodsValue;
-                    WCArchiveGoodsValue = "WHERE Price < " + GetWhereParameters();
-                    Cond = WCArchiveGoodsValue;
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE Price < " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
                     break;
                 case 10:
-                    SetWhereParameters(03, WhereParameters);
-                    temp = WCArchiveGoodsValue;
-                    WCArchiveGoodsValue = "WHERE DateOldValue < " + GetWhereParameters();
-                    Cond = WCArchiveGoodsValue;
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE DateOldValue < " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
+                    break;
+                case 11:
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE VAT <= " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
+                    break;
+                case 12:
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE Price <= " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
+                    break;
+                case 13:
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE DateOldValue <= " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
+                    break;
+                case 14:
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE VAT >= " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
+                    break;
+                case 15:
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE Price >= " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
+                    break;
+                case 16:
+                    temp = WhereConditionArchiveGoodsValue;
+                    WhereConditionArchiveGoodsValue = "WHERE DateOldValue >= " + GetWhereParameters();
+                    Cond = WhereConditionArchiveGoodsValue;
                     break;
 
                 default:
@@ -174,104 +308,21 @@ namespace StoreManagement.DbManagment
             return Cond;
         }
 
-        public Query(string WhereCondition)
+        public QueryTest(int data)
         {
-            wcaToReturn = SetWhereCondition(WhereCondition);
+            WhereConditionToReturn = SetArchiveGoodsValueWhereCondition(data);
         }
         public string GetWhereCondition()
         {
-            return wcaToReturn;
+            return WhereConditionToReturn;
         }
-        public string SetWhereParameters(int NumWhereParameters, List<String> WParameters)
+
+        public string SetSelectDataColumn()
         {
-            string WParam = string.Empty;
-            string temp = string.Empty;
 
-            switch (NumWhereParameters)
-            {
-                case 01:
-                    temp = WPArchiveGoodsValue;
-                    WPArchiveGoodsValue = String.Format(" '{0}' ", WParameters[0]);
-                    WParam = WPArchiveGoodsValue;
-                    break;
-
-                case 02:
-                    temp = WPArchiveGoodsValue;
-                    WPArchiveGoodsValue = String.Format(" '{0}' ", WParameters[0]);
-                    WParam = WPArchiveGoodsValue;
-                    break;
-                case 03:
-                    temp = WPArchiveGoodsValue;
-                    WPArchiveGoodsValue = String.Format(" BETWEEN  '{0}' AND '{1}' ", WParameters[0], WParameters[1]);
-                    WParam = WPArchiveGoodsValue;
-                    break;
-
-                case 04:
-                    temp = WPArchiveGoodsValue;
-                    WPArchiveGoodsValue = String.Format(" <> '{0}' ", WParameters[0]);
-                    WParam = WPArchiveGoodsValue;
-                    break;
-
-                case 05:
-                    temp = WPArchiveGoodsValue;
-                    WPArchiveGoodsValue = String.Format(" <= '{0}' ", WParameters[0]);
-                    WParam = WPArchiveGoodsValue;
-                    break;
-
-                case 06:
-                    temp = WPArchiveGoodsValue;
-                    WPArchiveGoodsValue = String.Format(" >= '{0}' ", WParameters[0]);
-                    WParam = WPArchiveGoodsValue;
-                    break;
-
-                case 07:
-                    temp = WPArchiveGoodsValue;
-                    WPArchiveGoodsValue = String.Format(" BETWEEN  '{0}' AND '{1}' ", WParameters[0], WParameters[1]);
-                    WParam = WPArchiveGoodsValue;
-                    break;
-                default:
-
-                    throw new Exception();
-
-            }
-
-            return WParam;
-        }
-        public Query(int NumWhereParameters, List<String> WParameters)
-        {
-            WhereParameters = WParameters;
-            wcaToReturn = SetWhereParameters(NumWhereParameters, WhereParameters);
-        }
-        public string GetWhereParameters()
-        {
-            return wcaToReturn;
         }
 
 
-        public string SetSelectCondition(int NumSelectCondition, List<String> SCParameters)
-        {
-            string SCparam = string.Empty;
-            string temp = string.Empty;
-
-            switch (NumSelectCondition)
-            {
-          
-                case 01:
-                    temp = SCArchiveGoodsValue;
-                    SCArchiveGoodsValue = String.Format(" IDProduct, VAT, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateOldValue ", SCParameters[0]);
-                    SCparam = SCArchiveGoodsValue;
-                    break;
-
-                default:
-
-                    throw new Exception();
-
-            }
-            return SCparam;
-        }
-
-
-        
         public string SetQuery(string QueryDaFare, List<String> parametri)
         {
             string qry = string.Empty;
@@ -288,14 +339,14 @@ namespace StoreManagement.DbManagment
                 case "UpdateMovements":
                     temp = UpdateMovements;
 
-                    UpdateMovements = String.Format("UPDATE Movements SET (IDCustomer) = ('{0}'), (IDSupplier) = ('{1}'),  (IDProduct) = ('{2}'),  (Qta) = ('{3}'),  (Price) = ('{4}'),  (DiscountPercentage) = ('{5}'),  (DiscountLimitNumbers) = ('{6}'),  (NetCost) = ('{7}'),  (NetNetCost) = ('{8}'),  (DateMovement) = ('{9}'),  (TypeMovement) = ('{10}')  " + GetWhereCondition(), param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
+                    UpdateMovements = String.Format("UPDATE Movements SET IDCustomer = '{0}', IDSupplier = '{1}',  IDProduct = '{2}',  Qta = '{3}',  Price = '{4}',  DiscountPercentage = '{5}',  (DiscountLimitNumbers) = '{6}',  NetCost = '{7}',  NetNetCost = '{8}',  DateMovement = '{9}',  TypeMovement = '{10}'  " + GetWhereCondition(), param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
                     qry = UpdateMovements;
                     break;
 
                 case "SelectMovements":
                     temp = SelectMovements;
 
-                    SelectMovements = String.Format("Select (IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement) FROM Movements" + GetWhereCondition());
+                    SelectMovements = String.Format("SELECT (IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement) FROM Movements" + GetWhereCondition());
                     qry = SelectMovements;
                     break;
 
@@ -344,14 +395,14 @@ namespace StoreManagement.DbManagment
                 case "UpdateArchiveGoodsValue":
                     temp = UpdateArchiveGoodsValue;
 
-                    UpdateArchiveGoodsValue = String.Format("UPDATE ArchiveGoodsValue SET() " + GetWhereCondition(), param[0], param[1], param[2], param[3]);
+                    UpdateArchiveGoodsValue = String.Format("UPDATE ArchiveGoodsValue SET() " + GetWhereCondition(), param[0]);
                     qry = UpdateArchiveGoodsValue;
                     break;
 
                 case "SelectArchiveGoodsValue":
                     temp = SelectArchiveGoodsValue;
 
-                    SelectArchiveGoodsValue = String.Format("Select (IDProduct, VAT, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateOldValue) FROM ArchiveGoodsValue" + GetWhereCondition());
+                    SelectArchiveGoodsValue = String.Format("SELECT (IDProduct, VAT, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateOldValue) FROM ArchiveGoodsValue" + GetWhereCondition());
                     qry = SelectArchiveGoodsValue;
                     break;
 
@@ -393,7 +444,7 @@ namespace StoreManagement.DbManagment
                 case "InsertIntoSuppliers":
                     temp = InsertIntoSuppliers;
 
-                    InsertIntoSuppliers = String.Format("INSERT INTO Suppliers(NameLegalOwner, SurnameLegalOwner, CompanyName, Address, CivicNumber, ZipCode, City, Region, Nation, Phone, Email, PEC, WebSite, SDI_Code, VAT_Code) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}')", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14] );
+                    InsertIntoSuppliers = String.Format("INSERT INTO Suppliers(NameLegalOwner, SurnameLegalOwner, CompanyName, Address, CivicNumber, ZipCode, City, Region, Nation, Phone, Email, PEC, WebSite, SDI_Code, VAT_Code) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}')", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14]);
                     qry = InsertIntoSuppliers;
                     break;
 
@@ -700,139 +751,5 @@ namespace StoreManagement.DbManagment
             }
             return qry;
         }
-
-        public Query(string QueryDaFare, List<String> parametri)
-        {
-            param = parametri;
-            queryToReturn = SetQuery(QueryDaFare, param);
-        }
-
-        public string GetQuery()
-        {
-            return queryToReturn;
-        }
-
-
-
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*
- * public string SetStrWhere(string Table, string str, List<String> paramWhere)
-        {
-            string stringWhere = string.Empty;
-
-            switch (Table)
-            {
-                case "Movements":
-                    string temp = strWhere;
-                    strWhere = String.Format("WHERE IDCustomer = ('{0}') AND IDSupplier = ('{1}') AND IDProduct = ('{2}') AND Qta = ('{3}') AND Price = ('{4}') AND DiscountPercentage = ('{5}') AND DiscountLimitNumbers = ('{6}') AND NetCost = ('{7}') AND NetNetCost = ('{8}') AND DateMovement = ('{9}') AND TypeMovement = ('{10}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
-                    stringWhere = strWhere;
-                    break;
-
-                case "ArchiveMovements":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE IDCustomer = ('{0}') AND IDSupplier = ('{1}') AND IDProduct = ('{2}') AND Qta = ('{3}') AND Price = ('{4}') AND DiscountPercentage = ('{5}') AND DiscountLimitNumbers = ('{6}') AND NetCost = ('{7}') AND NetNetCost = ('{8}') AND DateMovement = ('{9}') AND TypeMovement = ('{10}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
-                    stringWhere = strWhere;
-                    break;
-
-                case "ArchiveGoodsValue":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE IDProduct = ('{0}') AND VAT = ('{1}') AND Price = ('{2}') AND DiscountPercentage = ('{3}') AND DiscountLimitNumbers = ('{4}') AND NetCost = ('{5}') AND NetNetCost = ('{6}') AND DateOldValue = ('{7}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7]);
-                    stringWhere = strWhere;
-                    break;
-
-                case "TypeMovements":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE DescriptionMovement = ('{0}')) ", param[0]);
-                    break;
-
-                case "Suppliers":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE NameLegalOwner = ('{0}') AND SurnameLegalOwner = ('{1}') AND CompanyName = ('{2}') AND Address = ('{3}') AND CivicNumber = ('{4}') AND ZipCode = ('{5}') AND City = ('{6}') AND Region = ('{7}') AND Nation = ('{8}') AND Phone = ('{9}') AND Email = ('{10}') AND PEC = ('{11}') AND WebSite = ('{12}') AND SDI_Code = ('{13}') AND VAT_Code = ('{14}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14]);
-                    stringWhere = strWhere;
-                    break;
-
-                case "Customers":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE NameLegalOwner = ('{0}') AND SurnameLegalOwner = ('{1}') AND CompanyName = ('{2}') AND Address = ('{3}') AND CivicNumber = ('{4}') AND ZipCode = ('{5}') AND City = ('{6}') AND Region = ('{7}') AND Nation = ('{8}') AND Phone = ('{9}') AND Email = ('{10}') AND PEC = ('{11}') AND WebSite = ('{12}') AND SDI_Code = ('{13}') AND VAT_Code = ('{14}' AND StatusCustomer = ('{15}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10], param[11], param[12], param[13], param[14], param[15]);
-                    stringWhere = strWhere;
-                    break;
-
-                case "CustomerState":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE StatusDescription = ('{0}')) ", param[0]);
-                    stringWhere = strWhere;
-                    break;
-
-                case "InvoicesHead":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE IDCustomer = ('{0}') AND TotalPrice = ('{1}') AND DiscountedPrice = ('{2}') ) ", param[0], param[1], param[2]);
-                    stringWhere = strWhere;
-                    break;
-
-                case "InvoicesRows":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE IDInvoice = ('{0}') AND IDProduct = ('{1}') AND Qta = ('{2}') AND Price = ('{3}') AND VAT = ('{4}') AND PriceSubTotal = ('{5}') AND TotalQta = ('{6}') ) ", param[0], param[1], param[2], param[3], param[4], param[5], param[6]);
-                    stringWhere = strWhere;
-                    break;
-
-                case "GoodsValues":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE IDProduct = ('{0}') AND VAT = ('{1}') AND Price = ('{2}') AND DiscountPercentage = ('{3}') AND DiscountLimitNumbers = ('{4}') AND NetCost = ('{5}') AND NetNetCost = ('{6}') AND DateUpdateValue = ('{7}') AND TypeUpdateValue = ('{8}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8]);
-                    stringWhere = strWhere;
-                    break;
-
-                case "GoodsImages":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE IDProduct = ('{0}') AND ImageSingle = ('{1}') AND ImageBox = ('{2}') ", param[0], param[1], param[2]);
-                    stringWhere = strWhere;
-                    break;
-
-                case "FoodGoods":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE DescriptionProduct = ('{0}') AND EAN = ('{1}') AND IDSupplier = ('{2}') AND IDCategory = ('{3}') ) ", param[0], param[1], param[2], param[3] );
-                    stringWhere = strWhere;
-                    break;
-
-                case "FoodCategory":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE DescriptionCategory = ('{0}')) ", param[0]);
-                    stringWhere = strWhere;
-                    break;
-
-                case "GoodsDimensions":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE IDProduct = ('{0}') AND NumbersInBox = ('{1}') AND DimensionSingleHeight = ('{2}') AND DimensionSingleBase = ('{3}') AND DimensionSingleDepth = ('{4}') AND DimensionBoxHeight = ('{5}') AND DimensionBoxBase = ('{6}') AND WeightSingle = ('{7}') AND WightBox = ('{8}') ) ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8] );
-                    stringWhere = strWhere;
-                    break;
-
-                case "GoodsUpdateValue":
-                    temp = strWhere;
-                    strWhere = String.Format("WHERE IDCustomer = ('{0}') AND IDSupplier = ('{1}') AND IDProduct = ('{2}') AND Qta = ('{3}') AND Price = ('{4}') AND DiscountPercentage = ('{5}') AND DiscountLimitNumbers = ('{6}') AND NetCost = ('{7}') AND NetNetCost = ('{8}') AND DateMovement = ('{9}') AND TypeMovement = ('{10}') ", param[0], param[1], param[2], param[3], param[4], param[5], param[6], param[7], param[8], param[9], param[10]);
-                    stringWhere = strWhere;
-                    break;
-
-
-            }
-
-            return stringWhere;
-        }
-
-        public string GetWhereString()
-        {
-            return strWhere;
-        }
-
-*/
