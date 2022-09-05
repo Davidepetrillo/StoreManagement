@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,6 @@ namespace StoreManagement.DbManagment
     public class QueryTest
     {
 
-        private List<String> param = new List<String>();
 
         private string InsertIntoMovements = string.Empty;
         private string UpdateMovements = string.Empty;
@@ -98,14 +98,545 @@ namespace StoreManagement.DbManagment
 
         private string WhereParametersToReturn = string.Empty;
 
+        private string queryToReturn = string.Empty;
+
+        private List<String> param = new List<String>();
 
         private List<String> WhereParameters = new List<String>();
+        private List<String> SelectParameters = new List<String>();
 
-        private List<String> DataColumnArchiveGoodsValue = new List<String>() { "IDProduct", "VAT", "Price", "DiscountPercentage", "DiscountLimitNumbers", "NetCost", "NetNetCost", "DateOldValue" };
+        public List<String> ColumnNameArchiveGoodsValue = new List<String>();
+        public List<String> ColumnNameMovements = new List<String>();
+        public List<String> ColumnNameArchiveMovements = new List<String>();
 
 
 
-        public string SetArchiveGoodsValueWhereParameters(int caseToAnalyze, List<String> WParameters)
+
+        public List<string> ArchiveGoodsValueSelectUpdate(DataTable dt, int caseSelect, string updateValue)
+        {
+
+            List<String> ColumnNameArchiveGoodsValue = new List<String>() { SelectParameters[0], SelectParameters[1], SelectParameters[2], SelectParameters[3], SelectParameters[4], SelectParameters[5], SelectParameters[6], SelectParameters[7] };
+            DataTable table = dt;
+            DataRow[] foundRows;
+
+
+            foundRows = table.Select("IDValue, IDProduct, VAT, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateOldValue FROM ArchiveGoodsValue" + GetWhereCondition());
+
+            switch (caseSelect)
+            {
+                case 0:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDProduct")
+                            {
+                                ColumnNameArchiveGoodsValue[0] = updateValue;
+                            }
+                            return ColumnNameArchiveGoodsValue;
+                        }
+                    }
+
+                    break;
+
+                case 1:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "VAT")
+                            {
+                                ColumnNameArchiveGoodsValue[1] = updateValue;
+                            }
+                            return ColumnNameArchiveGoodsValue;
+                        }
+                    }
+
+                    break;
+
+                case 2:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Price")
+                            {
+                                ColumnNameArchiveGoodsValue[2] = updateValue;
+                            }
+                            return ColumnNameArchiveGoodsValue;
+                        }
+                    }
+
+                    break;
+
+                case 3:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DiscountPercentage")
+                            {
+                                ColumnNameArchiveGoodsValue[3] = updateValue;
+                            }
+                            return ColumnNameArchiveGoodsValue;
+                        }
+                    }
+
+                    break;
+
+                case 4:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DiscountLimitNumbers")
+                            {
+                                ColumnNameArchiveGoodsValue[4] = updateValue;
+                            }
+                            return ColumnNameArchiveGoodsValue;
+                        }
+                    }
+
+                    break;
+
+                case 5:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "NetCost")
+                            {
+                                ColumnNameArchiveGoodsValue[5] = updateValue;
+                            }
+                            return ColumnNameArchiveGoodsValue;
+                        }
+                    }
+                    break;
+
+                case 6:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "NetNetCost")
+                            {
+                                ColumnNameArchiveGoodsValue[6] = updateValue;
+                            }
+                            return ColumnNameArchiveGoodsValue;
+                        }
+                    }
+                    break;
+
+                case 7:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DateOldValue")
+                            {
+                                ColumnNameArchiveGoodsValue[7] = updateValue;
+                            }
+                            return ColumnNameArchiveGoodsValue;
+                        }
+                    }
+                    break;
+
+                default:
+
+                    throw new Exception();
+            }
+            return ColumnNameArchiveGoodsValue;
+
+        }
+        public List<string> MovementsSelectUpdate(DataTable dt, int caseSelect, string updateValue)
+        {
+            List<String> ColumnNameMovements = new List<String>() { SelectParameters[0], SelectParameters[1], SelectParameters[2], SelectParameters[3], SelectParameters[4], SelectParameters[5], SelectParameters[6], SelectParameters[7], SelectParameters[8], SelectParameters[9], SelectParameters[10] };
+            DataTable table = dt;
+            DataRow[] foundRows;
+
+
+            foundRows = table.Select("IDMovement, IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement FROM Movements" + GetWhereCondition());
+
+            switch (caseSelect)
+            {
+                case 0:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDCustomer")
+                            {
+                                ColumnNameMovements[0] = updateValue;
+                            }
+                            return ColumnNameMovements;
+                        }
+                    }
+
+                    break;
+
+                case 1:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDSupplier")
+                            {
+                                ColumnNameMovements[1] = updateValue;
+                            }
+                            return ColumnNameMovements;
+                        }
+                    }
+
+                    break;
+
+                case 2:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDProduct")
+                            {
+                                ColumnNameMovements[2] = updateValue;
+                            }
+                            return ColumnNameMovements;
+                        }
+                    }
+
+                    break;
+
+                case 3:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Qta")
+                            {
+                                ColumnNameMovements[3] = updateValue;
+                            }
+                            return ColumnNameMovements;
+                        }
+                    }
+
+                    break;
+
+                case 4:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Price")
+                            {
+                                ColumnNameMovements[4] = updateValue;
+                            }
+                            return ColumnNameMovements;
+                        }
+                    }
+
+                    break;
+
+                case 5:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DiscountPercentage")
+                            {
+                                ColumnNameMovements[5] = updateValue;
+                            }
+                            return ColumnNameMovements;
+                        }
+                    }
+                    break;
+
+                case 6:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DiscountLimitNumbers")
+                            {
+                                ColumnNameMovements[6] = updateValue;
+                            }
+                            return ColumnNameMovements;
+                        }
+                    }
+                    break;
+
+                case 7:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "NetCost")
+                            {
+                                ColumnNameMovements[7] = updateValue;
+                            }
+                            return ColumnNameMovements;
+                        }
+                    }
+                    break;
+
+                case 8:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "NetNetCost")
+                            {
+                                ColumnNameMovements[7] = updateValue;
+                            }
+                            return ColumnNameMovements;
+                        }
+                    }
+                    break;
+
+                case 9:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DateMovement")
+                            {
+                                ColumnNameMovements[7] = updateValue;
+                            }
+                            return ColumnNameMovements;
+                        }
+                    }
+                    break;
+
+                case 10:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "TypeMovement")
+                            {
+                                ColumnNameMovements[7] = updateValue;
+                            }
+                            return ColumnNameMovements;
+                        }
+                    }
+                    break;
+
+                default:
+
+                    throw new Exception();
+            }
+            return ColumnNameMovements;
+
+        }
+        public List<string> ArchiveMovementsSelectUpdate(DataTable dt, int caseSelect, string updateValue)
+        {
+            List<String> ColumnNameArchiveMovements = new List<String>() { SelectParameters[0], SelectParameters[1], SelectParameters[2], SelectParameters[3], SelectParameters[4], SelectParameters[5], SelectParameters[6], SelectParameters[7], SelectParameters[8], SelectParameters[9], SelectParameters[10] };
+            DataTable table = dt;
+            DataRow[] foundRows;
+
+
+            foundRows = table.Select("IDMovement, IDCustomer, IDSupplier, IDProduct, Qta, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateMovement, TypeMovement FROM Movements" + GetWhereCondition());
+
+            switch (caseSelect)
+            {
+                case 0:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDCustomer")
+                            {
+                                ColumnNameArchiveMovements[0] = updateValue;
+                            }
+                            return ColumnNameArchiveMovements;
+                        }
+                    }
+
+                    break;
+
+                case 1:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDSupplier")
+                            {
+                                ColumnNameArchiveMovements[1] = updateValue;
+                            }
+                            return ColumnNameArchiveMovements;
+                        }
+                    }
+
+                    break;
+
+                case 2:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDProduct")
+                            {
+                                ColumnNameArchiveMovements[2] = updateValue;
+                            }
+                            return ColumnNameArchiveMovements;
+                        }
+                    }
+
+                    break;
+
+                case 3:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Qta")
+                            {
+                                ColumnNameArchiveMovements[3] = updateValue;
+                            }
+                            return ColumnNameArchiveMovements;
+                        }
+                    }
+
+                    break;
+
+                case 4:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Price")
+                            {
+                                ColumnNameArchiveMovements[4] = updateValue;
+                            }
+                            return ColumnNameArchiveMovements;
+                        }
+                    }
+
+                    break;
+
+                case 5:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DiscountPercentage")
+                            {
+                                ColumnNameArchiveMovements[5] = updateValue;
+                            }
+                            return ColumnNameArchiveMovements;
+                        }
+                    }
+                    break;
+
+                case 6:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DiscountLimitNumbers")
+                            {
+                                ColumnNameArchiveMovements[6] = updateValue;
+                            }
+                            return ColumnNameArchiveMovements;
+                        }
+                    }
+                    break;
+
+                case 7:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "NetCost")
+                            {
+                                ColumnNameArchiveMovements[7] = updateValue;
+                            }
+                            return ColumnNameArchiveMovements;
+                        }
+                    }
+                    break;
+
+                case 8:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "NetNetCost")
+                            {
+                                ColumnNameArchiveMovements[7] = updateValue;
+                            }
+                            return ColumnNameArchiveMovements;
+                        }
+                    }
+                    break;
+
+                case 9:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DateMovement")
+                            {
+                                ColumnNameArchiveMovements[7] = updateValue;
+                            }
+                            return ColumnNameArchiveMovements;
+                        }
+                    }
+                    break;
+
+                case 10:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "TypeMovement")
+                            {
+                                ColumnNameArchiveMovements[7] = updateValue;
+                            }
+                            return ColumnNameArchiveMovements;
+                        }
+                    }
+                    break;
+
+                default:
+
+                    throw new Exception();
+            }
+            return ColumnNameArchiveMovements;
+
+        }
+
+
+
+
+        public string SetArchiveGoodsValueWhereParameters(int tableToAnalyze, int caseToAnalyze, List<String> WParameters)
         {
             string WhereParams = string.Empty;
             WhereParametersArchiveGoodsValue = String.Format(" '{0}' ", WParameters[0]);
@@ -194,10 +725,10 @@ namespace StoreManagement.DbManagment
         }
 
 
-        public QueryTest(int NumWhereParameters, List<String> WParameters)
+        public QueryTest(int table, int NumWhereParameters, List<String> WParameters)
         {
             WhereParameters = WParameters;
-            WhereParametersToReturn = SetArchiveGoodsValueWhereParameters(NumWhereParameters, WhereParameters);
+            WhereParametersToReturn = SetArchiveGoodsValueWhereParameters(table, NumWhereParameters, WhereParameters);
         }
 
         public string GetWhereParameters()
@@ -317,12 +848,7 @@ namespace StoreManagement.DbManagment
             return WhereConditionToReturn;
         }
 
-        public string SetSelectDataColumn()
-        {
-
-        }
-
-
+        
         public string SetQuery(string QueryDaFare, List<String> parametri)
         {
             string qry = string.Empty;
@@ -395,14 +921,14 @@ namespace StoreManagement.DbManagment
                 case "UpdateArchiveGoodsValue":
                     temp = UpdateArchiveGoodsValue;
 
-                    UpdateArchiveGoodsValue = String.Format("UPDATE ArchiveGoodsValue SET() " + GetWhereCondition(), param[0]);
+                    UpdateArchiveGoodsValue = String.Format("UPDATE ArchiveGoodsValue SET IDProduct = '{0}', VAT = '{1}',  Price = '{2}',  Qta = '{3}',  DiscountPercentage = '{4}',  DiscountLimitNumbers = '{5}',  NetCost = '{6}',  NetNetCost = '{7}',  DateOldValue = '{8}' " + GetWhereCondition(), ColumnNameArchiveGoodsValue[0], ColumnNameArchiveGoodsValue[1], ColumnNameArchiveGoodsValue[2], ColumnNameArchiveGoodsValue[3], ColumnNameArchiveGoodsValue[4], ColumnNameArchiveGoodsValue[5], ColumnNameArchiveGoodsValue[6], ColumnNameArchiveGoodsValue[7], ColumnNameArchiveGoodsValue[8]);
                     qry = UpdateArchiveGoodsValue;
                     break;
 
                 case "SelectArchiveGoodsValue":
                     temp = SelectArchiveGoodsValue;
 
-                    SelectArchiveGoodsValue = String.Format("SELECT (IDProduct, VAT, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateOldValue) FROM ArchiveGoodsValue" + GetWhereCondition());
+                    SelectArchiveGoodsValue = String.Format("SELECT * FROM ArchiveGoodsValue" + GetWhereCondition());
                     qry = SelectArchiveGoodsValue;
                     break;
 
@@ -750,6 +1276,17 @@ namespace StoreManagement.DbManagment
                     break;
             }
             return qry;
+        }
+
+        public QueryTest(string QueryDaFare, List<String> parametri)
+        {
+            param = parametri;
+            queryToReturn = SetQuery(QueryDaFare, param);
+        }
+
+        public string GetQuery()
+        {
+            return queryToReturn;
         }
     }
 }
