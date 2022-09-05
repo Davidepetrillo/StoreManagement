@@ -87,6 +87,22 @@ namespace StoreManagement.DbManagment
         private string DeleteGoodsUpdateValue = string.Empty;
 
         private string WhereConditionArchiveGoodsValue = string.Empty;
+        private string WhereConditionArchiveMovements = string.Empty;
+        private string WhereConditionCustomers = string.Empty;
+        private string WhereConditionCustomerState = string.Empty;
+        private string WhereConditionFoodCategory = string.Empty;
+        private string WhereConditionFoodGoods = string.Empty;
+        private string WhereConditionGoodsDimension = string.Empty;
+        private string WhereConditionGoodsImages = string.Empty;
+        private string WhereConditionGoodsUpdateValue = string.Empty;
+        private string WhereConditionGoodsValues = string.Empty;
+        private string WhereConditionInvoicesHead = string.Empty;
+        private string WhereConditionInvoicesRows = string.Empty;
+        private string WhereConditionMovements = string.Empty;
+        private string WhereConditionSuppliers = string.Empty;
+        private string WhereConditionTypeMovements = string.Empty;
+
+
 
         private string WhereParametersArchiveGoodsValue = string.Empty;
 
@@ -100,16 +116,13 @@ namespace StoreManagement.DbManagment
 
         private string queryToReturn = string.Empty;
 
-        private List<String> param = new List<String>();
 
+        private List<String> param = new List<String>();
         private List<String> WhereParameters = new List<String>();
         private List<String> SelectParameters = new List<String>();
-
         public List<String> ColumnNameArchiveGoodsValue = new List<String>();
         public List<String> ColumnNameMovements = new List<String>();
         public List<String> ColumnNameArchiveMovements = new List<String>();
-
-
 
 
         public List<string> ArchiveGoodsValueSelectUpdate(DataTable dt, int caseSelect, string updateValue)
@@ -632,8 +645,1197 @@ namespace StoreManagement.DbManagment
             return ColumnNameArchiveMovements;
 
         }
+        public List<string> CustomersSelectUpdate(DataTable dt, int caseSelect, string updateValue)
+        {
+            List<String> ColumnNameCustomers = new List<String>() { SelectParameters[0], SelectParameters[1], SelectParameters[2], SelectParameters[3], SelectParameters[4], SelectParameters[5], SelectParameters[6], SelectParameters[7], SelectParameters[8], SelectParameters[9], SelectParameters[10], SelectParameters[11], SelectParameters[12], SelectParameters[13], SelectParameters[14], SelectParameters[15] };
+            DataTable table = dt;
+            DataRow[] foundRows;
 
 
+            foundRows = table.Select("NameLegalOwner, SurnameLegalOwner, CompanyName, Address, CivicNumber, ZipCode, City, Region, Nation, Phone, Email, PEC, WebSite, SDI_Code, VAT_Code, StatusCustomer FROM Customers" + GetWhereCondition());
+
+            switch (caseSelect)
+            {
+                case 0:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "NameLegalOwner")
+                            {
+                                ColumnNameCustomers[0] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+
+                    break;
+
+                case 1:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "SurnameLegalOwner")
+                            {
+                                ColumnNameCustomers[1] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+
+                    break;
+
+                case 2:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "CompanyName")
+                            {
+                                ColumnNameCustomers[2] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+
+                    break;
+
+                case 3:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Address")
+                            {
+                                ColumnNameCustomers[3] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+
+                    break;
+
+                case 4:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "CivicNumber")
+                            {
+                                ColumnNameCustomers[4] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+
+                    break;
+
+                case 5:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "ZipCode")
+                            {
+                                ColumnNameCustomers[5] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+                    break;
+
+                case 6:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "City")
+                            {
+                                ColumnNameCustomers[6] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+                    break;
+
+                case 7:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Region")
+                            {
+                                ColumnNameCustomers[7] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+                    break;
+
+                case 8:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Nation")
+                            {
+                                ColumnNameCustomers[8] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+                    break;
+
+                case 9:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Phone")
+                            {
+                                ColumnNameCustomers[9] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+                    break;
+
+                case 10:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Email")
+                            {
+                                ColumnNameCustomers[10] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+                    break;
+
+                case 11:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "PEC")
+                            {
+                                ColumnNameCustomers[11] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+                    break;
+
+                case 12:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "WebSite")
+                            {
+                                ColumnNameCustomers[12] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+                    break;
+
+                case 13:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "SDI_Code")
+                            {
+                                ColumnNameCustomers[13] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+                    break;
+
+                case 14:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "VAT_Code")
+                            {
+                                ColumnNameCustomers[14] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+                    break;
+
+                case 15:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "StatusCustomer")
+                            {
+                                ColumnNameCustomers[15] = updateValue;
+                            }
+                            return ColumnNameCustomers;
+                        }
+                    }
+                    break;
+
+                default:
+
+                    throw new Exception();
+            }
+            return ColumnNameCustomers;
+
+        }
+        public List<string> FoodGoodsSelectUpdate(DataTable dt, int caseSelect, string updateValue)
+        {
+            List<String> ColumnNameFoodGoods = new List<String>() { SelectParameters[0], SelectParameters[1], SelectParameters[2], SelectParameters[3]};
+            DataTable table = dt;
+            DataRow[] foundRows;
+
+
+            foundRows = table.Select("IDProduct, DescriptionProduct, EAN, IDSupplier, IDCategory" + GetWhereCondition());
+
+            switch (caseSelect)
+            {
+                case 0:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DescriptionProduct")
+                            {
+                                ColumnNameFoodGoods[0] = updateValue;
+                            }
+                            return ColumnNameFoodGoods;
+                        }
+                    }
+
+                    break;
+
+                case 1:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "EAN")
+                            {
+                                ColumnNameFoodGoods[1] = updateValue;
+                            }
+                            return ColumnNameFoodGoods;
+                        }
+                    }
+
+                    break;
+
+                case 2:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDSupplier")
+                            {
+                                ColumnNameFoodGoods[2] = updateValue;
+                            }
+                            return ColumnNameFoodGoods;
+                        }
+                    }
+
+                    break;
+
+                case 3:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDCategory")
+                            {
+                                ColumnNameFoodGoods[3] = updateValue;
+                            }
+                            return ColumnNameFoodGoods;
+                        }
+                    }
+
+                    break;
+
+                default:
+
+                    throw new Exception();
+            }
+            return ColumnNameFoodGoods;
+
+        }
+        public List<string> GoodsDimensionSelectUpdate(DataTable dt, int caseSelect, string updateValue)
+        {
+            List<String> ColumnNameGoodsDimension = new List<String>() { SelectParameters[0], SelectParameters[1], SelectParameters[2], SelectParameters[3], SelectParameters[4], SelectParameters[5], SelectParameters[6], SelectParameters[7], SelectParameters[8], SelectParameters[9]};
+            DataTable table = dt;
+            DataRow[] foundRows;
+
+
+            foundRows = table.Select("IDDimension, IDProduct, NumbersInBox, DimensionSingleHeight, DimensionSingleBase, DimensionSingleDepth, DimensionBoxHeight, DimensionBoxBase, DimensionBoxDepth, WeightSingle, WightBox FROM Movements" + GetWhereCondition());
+
+            switch (caseSelect)
+            {
+                case 0:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDProduct")
+                            {
+                                ColumnNameGoodsDimension[0] = updateValue;
+                            }
+                            return ColumnNameGoodsDimension;
+                        }
+                    }
+
+                    break;
+
+                case 1:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "NumbersInBox")
+                            {
+                                ColumnNameGoodsDimension[1] = updateValue;
+                            }
+                            return ColumnNameGoodsDimension;
+                        }
+                    }
+
+                    break;
+
+                case 2:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DimensionSingleHeight")
+                            {
+                                ColumnNameGoodsDimension[2] = updateValue;
+                            }
+                            return ColumnNameGoodsDimension;
+                        }
+                    }
+
+                    break;
+
+                case 3:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DimensionSingleBase")
+                            {
+                                ColumnNameGoodsDimension[3] = updateValue;
+                            }
+                            return ColumnNameGoodsDimension;
+                        }
+                    }
+
+                    break;
+
+                case 4:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DimensionSingleDepth")
+                            {
+                                ColumnNameGoodsDimension[4] = updateValue;
+                            }
+                            return ColumnNameGoodsDimension;
+                        }
+                    }
+
+                    break;
+
+                case 5:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DimensionBoxHeight")
+                            {
+                                ColumnNameGoodsDimension[5] = updateValue;
+                            }
+                            return ColumnNameGoodsDimension;
+                        }
+                    }
+                    break;
+
+                case 6:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DimensionBoxBase")
+                            {
+                                ColumnNameGoodsDimension[6] = updateValue;
+                            }
+                            return ColumnNameGoodsDimension;
+                        }
+                    }
+                    break;
+
+                case 7:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DimensionBoxDepth")
+                            {
+                                ColumnNameGoodsDimension[7] = updateValue;
+                            }
+                            return ColumnNameGoodsDimension;
+                        }
+                    }
+                    break;
+
+                case 8:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "WeightSingle")
+                            {
+                                ColumnNameGoodsDimension[8] = updateValue;
+                            }
+                            return ColumnNameGoodsDimension;
+                        }
+                    }
+                    break;
+
+                case 9:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "WeightBox")
+                            {
+                                ColumnNameGoodsDimension[9] = updateValue;
+                            }
+                            return ColumnNameGoodsDimension;
+                        }
+                    }
+                    break;
+
+                
+                default:
+
+                    throw new Exception();
+            }
+            return ColumnNameGoodsDimension;
+
+        }
+        public List<string> GoodsValueSelectUpdate(DataTable dt, int caseSelect, string updateValue)
+        {
+
+            List<String> ColumnNameGoodsValue = new List<String>() { SelectParameters[0], SelectParameters[1], SelectParameters[2], SelectParameters[3], SelectParameters[4], SelectParameters[5], SelectParameters[6], SelectParameters[7], SelectParameters[8] };
+            DataTable table = dt;
+            DataRow[] foundRows;
+
+
+            foundRows = table.Select("IDValue, IDProduct, VAT, Price, DiscountPercentage, DiscountLimitNumbers, NetCost, NetNetCost, DateUpdateValue, TypeUpdateValue FROM GoodsValue" + GetWhereCondition());
+
+            switch (caseSelect)
+            {
+                case 0:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDProduct")
+                            {
+                                ColumnNameGoodsValue[0] = updateValue;
+                            }
+                            return ColumnNameGoodsValue;
+                        }
+                    }
+
+                    break;
+
+                case 1:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "VAT")
+                            {
+                                ColumnNameGoodsValue[1] = updateValue;
+                            }
+                            return ColumnNameGoodsValue;
+                        }
+                    }
+
+                    break;
+
+                case 2:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Price")
+                            {
+                                ColumnNameGoodsValue[2] = updateValue;
+                            }
+                            return ColumnNameGoodsValue;
+                        }
+                    }
+
+                    break;
+
+                case 3:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DiscountPercentage")
+                            {
+                                ColumnNameGoodsValue[3] = updateValue;
+                            }
+                            return ColumnNameGoodsValue;
+                        }
+                    }
+
+                    break;
+
+                case 4:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DiscountLimitNumbers")
+                            {
+                                ColumnNameGoodsValue[4] = updateValue;
+                            }
+                            return ColumnNameGoodsValue;
+                        }
+                    }
+
+                    break;
+
+                case 5:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "NetCost")
+                            {
+                                ColumnNameGoodsValue[5] = updateValue;
+                            }
+                            return ColumnNameGoodsValue;
+                        }
+                    }
+                    break;
+
+                case 6:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "NetNetCost")
+                            {
+                                ColumnNameGoodsValue[6] = updateValue;
+                            }
+                            return ColumnNameGoodsValue;
+                        }
+                    }
+                    break;
+
+                case 7:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DateUpdateValue")
+                            {
+                                ColumnNameGoodsValue[7] = updateValue;
+                            }
+                            return ColumnNameGoodsValue;
+                        }
+                    }
+                    break;
+
+                case 8:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "TypeUpdateValue")
+                            {
+                                ColumnNameGoodsValue[8] = updateValue;
+                            }
+                            return ColumnNameGoodsValue;
+                        }
+                    }
+                    break;
+
+                default:
+
+                    throw new Exception();
+            }
+            return ColumnNameGoodsValue;
+
+        }
+        public List<string> InvoicesHeadSelectUpdate(DataTable dt, int caseSelect, string updateValue)
+        {
+            List<String> ColumnNameInvoicesHead = new List<String>() { SelectParameters[0], SelectParameters[1], SelectParameters[2] };
+            DataTable table = dt;
+            DataRow[] foundRows;
+
+
+            foundRows = table.Select("IDInvoice, IDCustomer, TotalPrice, DiscountedPrice FROM InvoicesHead" + GetWhereCondition());
+
+            switch (caseSelect)
+            {
+                case 0:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDCustomer")
+                            {
+                                ColumnNameInvoicesHead[0] = updateValue;
+                            }
+                            return ColumnNameInvoicesHead;
+                        }
+                    }
+
+                    break;
+
+                case 1:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "TotalPrice")
+                            {
+                                ColumnNameInvoicesHead[1] = updateValue;
+                            }
+                            return ColumnNameInvoicesHead;
+                        }
+                    }
+
+                    break;
+
+                case 2:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "DiscountedPrice")
+                            {
+                                ColumnNameInvoicesHead[2] = updateValue;
+                            }
+                            return ColumnNameInvoicesHead;
+                        }
+                    }
+
+                    break;
+
+               
+                default:
+
+                    throw new Exception();
+            }
+            return ColumnNameInvoicesHead;
+
+        }
+        public List<string> InvoicesRowsSelectUpdate(DataTable dt, int caseSelect, string updateValue)
+        {
+            List<String> ColumnNameInvoicesRows = new List<String>() { SelectParameters[0], SelectParameters[1], SelectParameters[2], SelectParameters[3], SelectParameters[4], SelectParameters[5], SelectParameters[6] };
+            DataTable table = dt;
+            DataRow[] foundRows;
+
+
+            foundRows = table.Select("IDInvoiceRows, IDInvoice, IDProduct, Qta, Price, VAT, PriceSubTotal, TotalQta FROM InvoicesRows" + GetWhereCondition());
+
+            switch (caseSelect)
+            {
+                case 0:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDInvoice")
+                            {
+                                ColumnNameInvoicesRows[0] = updateValue;
+                            }
+                            return ColumnNameInvoicesRows;
+                        }
+                    }
+
+                    break;
+
+                case 1:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDProduct")
+                            {
+                                ColumnNameInvoicesRows[1] = updateValue;
+                            }
+                            return ColumnNameInvoicesRows;
+                        }
+                    }
+
+                    break;
+
+                case 2:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Qta")
+                            {
+                                ColumnNameInvoicesRows[2] = updateValue;
+                            }
+                            return ColumnNameInvoicesRows;
+                        }
+                    }
+
+                    break;
+
+                case 3:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Price")
+                            {
+                                ColumnNameInvoicesRows[3] = updateValue;
+                            }
+                            return ColumnNameInvoicesRows;
+                        }
+                    }
+
+                    break;
+
+                case 4:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "VAT")
+                            {
+                                ColumnNameInvoicesRows[4] = updateValue;
+                            }
+                            return ColumnNameInvoicesRows;
+                        }
+                    }
+
+                    break;
+
+                case 5:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "PriceSubTotal")
+                            {
+                                ColumnNameInvoicesRows[5] = updateValue;
+                            }
+                            return ColumnNameInvoicesRows;
+                        }
+                    }
+
+                    break;
+
+                case 6:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "TotalQta")
+                            {
+                                ColumnNameInvoicesRows[6] = updateValue;
+                            }
+                            return ColumnNameInvoicesRows;
+                        }
+                    }
+
+                    break;
+
+
+                default:
+
+                    throw new Exception();
+            }
+            return ColumnNameInvoicesRows;
+
+        }
+        public List<string> SuppliersSelectUpdate(DataTable dt, int caseSelect, string updateValue)
+        {
+            List<String> ColumnNameSuppliers = new List<String>() { SelectParameters[0], SelectParameters[1], SelectParameters[2], SelectParameters[3], SelectParameters[4], SelectParameters[5], SelectParameters[6], SelectParameters[7], SelectParameters[8], SelectParameters[9], SelectParameters[10], SelectParameters[11], SelectParameters[12], SelectParameters[13], SelectParameters[14] };
+            DataTable table = dt;
+            DataRow[] foundRows;
+
+
+            foundRows = table.Select("NameLegalOwner, SurnameLegalOwner, CompanyName, Address, CivicNumber, ZipCode, City, Region, Nation, Phone, Email, PEC, WebSite, SDI_Code, VAT_Code FROM Suppliers" + GetWhereCondition());
+
+            switch (caseSelect)
+            {
+                case 0:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "NameLegalOwner")
+                            {
+                                ColumnNameSuppliers[0] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+
+                    break;
+
+                case 1:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "SurnameLegalOwner")
+                            {
+                                ColumnNameSuppliers[1] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+
+                    break;
+
+                case 2:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "CompanyName")
+                            {
+                                ColumnNameSuppliers[2] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+
+                    break;
+
+                case 3:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Address")
+                            {
+                                ColumnNameSuppliers[3] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+
+                    break;
+
+                case 4:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "CivicNumber")
+                            {
+                                ColumnNameSuppliers[4] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+
+                    break;
+
+                case 5:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "ZipCode")
+                            {
+                                ColumnNameSuppliers[5] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+                    break;
+
+                case 6:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "City")
+                            {
+                                ColumnNameSuppliers[6] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+                    break;
+
+                case 7:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Region")
+                            {
+                                ColumnNameSuppliers[7] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+                    break;
+
+                case 8:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Nation")
+                            {
+                                ColumnNameSuppliers[8] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+                    break;
+
+                case 9:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Phone")
+                            {
+                                ColumnNameSuppliers[9] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+                    break;
+
+                case 10:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "Email")
+                            {
+                                ColumnNameSuppliers[10] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+                    break;
+
+                case 11:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "PEC")
+                            {
+                                ColumnNameSuppliers[11] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+                    break;
+
+                case 12:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "WebSite")
+                            {
+                                ColumnNameSuppliers[12] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+                    break;
+
+                case 13:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "SDI_Code")
+                            {
+                                ColumnNameSuppliers[13] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+                    break;
+
+                case 14:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "VAT_Code")
+                            {
+                                ColumnNameSuppliers[14] = updateValue;
+                            }
+                            return ColumnNameSuppliers;
+                        }
+                    }
+                    break;
+
+                default:
+
+                    throw new Exception();
+            }
+            return ColumnNameSuppliers;
+
+        }
+        public List<string> GoodsImagesSelectUpdate(DataTable dt, int caseSelect, string updateValue)
+        {
+            List<String> ColumnNameGoodsImages = new List<String>() { SelectParameters[0], SelectParameters[1], SelectParameters[2] };
+            DataTable table = dt;
+            DataRow[] foundRows;
+
+
+            foundRows = table.Select("IDImage, IDProduct, ImageSingle, ImageBox FROM GoodsImages" + GetWhereCondition());
+
+            switch (caseSelect)
+            {
+                case 0:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "IDProduct")
+                            {
+                                ColumnNameGoodsImages[0] = updateValue;
+                            }
+                            return ColumnNameGoodsImages;
+                        }
+                    }
+
+                    break;
+
+                case 1:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "ImageSingle")
+                            {
+                                ColumnNameGoodsImages[1] = updateValue;
+                            }
+                            return ColumnNameGoodsImages;
+                        }
+                    }
+
+                    break;
+
+                case 2:
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dt.Columns.Count; j++)
+                        {
+                            string nome = dt.Rows[i].ItemArray[j].ToString().Trim();
+                            if (nome == "ImageBox")
+                            {
+                                ColumnNameGoodsImages[2] = updateValue;
+                            }
+                            return ColumnNameGoodsImages;
+                        }
+                    }
+
+                    break;
+
+
+                default:
+
+                    throw new Exception();
+            }
+            return ColumnNameGoodsImages;
+
+        }
 
 
         public string SetArchiveGoodsValueWhereParameters(int tableToAnalyze, int caseToAnalyze, List<String> WParameters)
@@ -724,7 +1926,6 @@ namespace StoreManagement.DbManagment
             return WhereParams;
         }
 
-
         public QueryTest(int table, int NumWhereParameters, List<String> WParameters)
         {
             WhereParameters = WParameters;
@@ -736,99 +1937,1816 @@ namespace StoreManagement.DbManagment
             return WhereParametersToReturn;
         }
 
-        
-
-        public string SetArchiveGoodsValueWhereCondition(int dataToAnalyze)
+        public string SetWhereCondition(int dataToAnalyze, List<string> tableDataCondition, List<string> tableParameterCondition, string op)
         {
             string Cond = string.Empty;
             string temp = string.Empty;
 
+            string conditionWhere = " WHERE ";
+
             switch (dataToAnalyze)
             {
                 case 0:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE IDValue = " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
+
+                    if (!String.IsNullOrEmpty(tableParameterCondition[0].ToString().Trim()))
+                    {
+                        temp = WhereConditionArchiveGoodsValue;
+                        WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " {0} "+ op +"  '{1}' ", tableDataCondition[0], tableParameterCondition[0]);
+                        conditionWhere = WhereConditionArchiveGoodsValue;
+                        Cond = WhereConditionArchiveGoodsValue;
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(tableParameterCondition[1].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveGoodsValue;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " {0} "+ op +" '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " AND {0} "+ op +"  '{1}' ", tableDataCondition[1], tableParameterCondition[1]);                                
+                            }
+                            conditionWhere = WhereConditionArchiveGoodsValue;
+                            Cond = WhereConditionArchiveGoodsValue;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[2].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveGoodsValue;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);                                
+                            }
+                            conditionWhere = WhereConditionArchiveGoodsValue;
+                            Cond = WhereConditionArchiveGoodsValue;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[3].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveGoodsValue;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            conditionWhere = WhereConditionArchiveGoodsValue;
+                            Cond = WhereConditionArchiveGoodsValue;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[4].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveGoodsValue;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            conditionWhere = WhereConditionArchiveGoodsValue;
+                            Cond = WhereConditionArchiveGoodsValue;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[5].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveGoodsValue;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                                Cond = WhereConditionArchiveGoodsValue;
+                            }
+                            conditionWhere = WhereConditionArchiveGoodsValue;
+                            Cond = WhereConditionArchiveGoodsValue;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[6].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveGoodsValue;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            conditionWhere = WhereConditionArchiveGoodsValue;
+                            Cond = WhereConditionArchiveGoodsValue;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[7].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveGoodsValue;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            conditionWhere = WhereConditionArchiveGoodsValue;
+                            Cond = WhereConditionArchiveGoodsValue;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[8].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveGoodsValue;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveGoodsValue = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            conditionWhere = WhereConditionArchiveGoodsValue;
+                            Cond = WhereConditionArchiveGoodsValue;
+                        }
+
+                    }
+
                     break;
+
+
                 case 1:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE IDProduct = " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
+
+                    if (!String.IsNullOrEmpty(tableParameterCondition[0].ToString().Trim()))
+                    {
+                        temp = WhereConditionArchiveMovements;
+                        WhereConditionArchiveMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[0], tableParameterCondition[0]);
+                        Cond = WhereConditionArchiveMovements;
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(tableParameterCondition[1].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            conditionWhere = WhereConditionArchiveMovements;
+                            Cond = WhereConditionArchiveMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[2].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            conditionWhere = WhereConditionArchiveMovements;
+                            Cond = WhereConditionArchiveMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[3].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            conditionWhere = WhereConditionArchiveMovements;
+                            Cond = WhereConditionArchiveMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[4].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            conditionWhere = WhereConditionArchiveMovements;
+                            Cond = WhereConditionArchiveMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[5].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            conditionWhere = WhereConditionArchiveMovements;
+                            Cond = WhereConditionArchiveMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[6].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            conditionWhere = WhereConditionArchiveMovements;
+                            Cond = WhereConditionArchiveMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[7].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            conditionWhere = WhereConditionArchiveMovements;
+                            Cond = WhereConditionArchiveMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[8].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            conditionWhere = WhereConditionArchiveMovements;
+                            Cond = WhereConditionArchiveMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[9].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[9], tableParameterCondition[9]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[9], tableParameterCondition[9]);
+                            }
+                            conditionWhere = WhereConditionArchiveMovements;
+                            Cond = WhereConditionArchiveMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[10].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[10], tableParameterCondition[10]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[10], tableParameterCondition[10]);
+                            }
+                            conditionWhere = WhereConditionArchiveMovements;
+                            Cond = WhereConditionArchiveMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[11].ToString().Trim()))
+                        {
+                            temp = WhereConditionArchiveMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[11], tableParameterCondition[11]);
+                            }
+                            else
+                            {
+                                WhereConditionArchiveMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[11], tableParameterCondition[11]);
+                            }
+                            conditionWhere = WhereConditionArchiveMovements;
+                            Cond = WhereConditionArchiveMovements;
+
+                        }
+
+                    }
+
                     break;
+
+
                 case 2:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE VAT = " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
+
+                    if (!String.IsNullOrEmpty(tableParameterCondition[0].ToString().Trim()))
+                    {
+                        temp = WhereConditionCustomers;
+                        WhereConditionCustomers = String.Format(conditionWhere + " {0} = '{1}' ", tableDataCondition[0], tableParameterCondition[0]);
+                        Cond = WhereConditionCustomers;
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(tableParameterCondition[1].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[2].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[3].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[4].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[5].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[6].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[7].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[8].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[9].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[9], tableParameterCondition[9]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[9], tableParameterCondition[9]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[10].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[10], tableParameterCondition[10]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[10], tableParameterCondition[10]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[11].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[11], tableParameterCondition[11]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[11], tableParameterCondition[11]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[12].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[12], tableParameterCondition[12]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[12], tableParameterCondition[12]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[13].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[13], tableParameterCondition[13]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[13], tableParameterCondition[13]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[14].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[14], tableParameterCondition[14]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[14], tableParameterCondition[14]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[15].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[15], tableParameterCondition[15]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[15], tableParameterCondition[15]);
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[16].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[16], tableParameterCondition[16]);
+                            }
+                            else
+                            {
+                                WhereConditionCustomers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[16], tableParameterCondition[16]);
+                                
+                            }
+                            conditionWhere = WhereConditionCustomers;
+                            Cond = WhereConditionCustomers;
+                        }
+
+                    }
+
                     break;
+
                 case 3:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE Price = " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
-                    break;
+
+                    if (!String.IsNullOrEmpty(tableParameterCondition[0].ToString().Trim()))
+                    {
+                        temp = WhereConditionFoodGoods;
+                        WhereConditionFoodGoods = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[0], tableParameterCondition[0]);
+                        Cond = WhereConditionFoodGoods;
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(tableParameterCondition[1].ToString().Trim()))
+                        {
+                            temp = WhereConditionFoodGoods;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionFoodGoods = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            else
+                            {
+                                WhereConditionFoodGoods = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            conditionWhere = WhereConditionFoodGoods;
+                            Cond = WhereConditionFoodGoods;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[2].ToString().Trim()))
+                        {
+                            temp = WhereConditionFoodGoods;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionFoodGoods = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            else
+                            {
+                                WhereConditionFoodGoods = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            conditionWhere = WhereConditionFoodGoods;
+                            Cond = WhereConditionArchiveMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[3].ToString().Trim()))
+                        {
+                            temp = WhereConditionFoodGoods;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionFoodGoods = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            else
+                            {
+                                WhereConditionFoodGoods = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            conditionWhere = WhereConditionFoodGoods;
+                            Cond = WhereConditionFoodGoods;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[4].ToString().Trim()))
+                        {
+                            temp = WhereConditionFoodGoods;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionFoodGoods = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            else
+                            {
+                                WhereConditionFoodGoods = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            conditionWhere = WhereConditionFoodGoods;
+                            Cond = WhereConditionFoodGoods;
+                        }
+
+                    }
+
+                        break;
+
                 case 4:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE DateOldValue = " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
-                    break;
+
+                    if (!String.IsNullOrEmpty(tableParameterCondition[0].ToString().Trim()))
+                    {
+                        temp = WhereConditionGoodsDimension;
+                        WhereConditionGoodsDimension = String.Format(conditionWhere + " {0} = '{1}' ", tableDataCondition[0], tableParameterCondition[0]);
+                        Cond = WhereConditionGoodsDimension;
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(tableParameterCondition[1].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsDimension;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            conditionWhere = WhereConditionGoodsDimension;
+                            Cond = WhereConditionGoodsDimension;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[2].ToString().Trim()))
+                        {
+                            temp = WhereConditionCustomers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            conditionWhere = WhereConditionGoodsDimension;
+                            Cond = WhereConditionGoodsDimension;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[3].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsDimension;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            conditionWhere = WhereConditionGoodsDimension;
+                            Cond = WhereConditionGoodsDimension;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[4].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsDimension;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            conditionWhere = WhereConditionGoodsDimension;
+                            Cond = WhereConditionGoodsDimension;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[5].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsDimension;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            conditionWhere = WhereConditionGoodsDimension;
+                            Cond = WhereConditionGoodsDimension;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[6].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsDimension;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            conditionWhere = WhereConditionGoodsDimension;
+                            Cond = WhereConditionGoodsDimension;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[7].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsDimension;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            conditionWhere = WhereConditionGoodsDimension;
+                            Cond = WhereConditionGoodsDimension;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[8].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsDimension;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            conditionWhere = WhereConditionGoodsDimension;
+                            Cond = WhereConditionGoodsDimension;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[9].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsDimension;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[9], tableParameterCondition[9]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[9], tableParameterCondition[9]);
+                            }
+                            conditionWhere = WhereConditionGoodsDimension;
+                            Cond = WhereConditionGoodsDimension;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[10].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsDimension;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[10], tableParameterCondition[10]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsDimension = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[10], tableParameterCondition[10]);
+                            }
+                            conditionWhere = WhereConditionGoodsDimension;
+                            Cond = WhereConditionGoodsDimension;
+                        }
+                    }
+
+                        break;
+
                 case 5:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE VAT > " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
-                    break;
+
+                    if (!String.IsNullOrEmpty(tableParameterCondition[0].ToString().Trim()))
+                    {
+                        temp = WhereConditionGoodsImages;
+                        WhereConditionGoodsImages = String.Format(conditionWhere + " {0} = '{1}' ", tableDataCondition[0], tableParameterCondition[0]);
+                        Cond = WhereConditionGoodsImages;
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(tableParameterCondition[1].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsImages;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsImages = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsImages = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            conditionWhere = WhereConditionGoodsImages;
+                            Cond = WhereConditionGoodsImages;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[2].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsImages;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsImages = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsImages = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            conditionWhere = WhereConditionGoodsImages;
+                            Cond = WhereConditionGoodsImages;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[3].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsImages;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsImages = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsImages = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            conditionWhere = WhereConditionGoodsImages;
+                            Cond = WhereConditionGoodsImages;
+                        }
+                    }
+
+                        break;
+
                 case 6:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE Price > " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
-                    break;
+
+                    if (!String.IsNullOrEmpty(tableParameterCondition[0].ToString().Trim()))
+                    {
+                        temp = WhereConditionGoodsValues;
+                        WhereConditionGoodsValues = String.Format(conditionWhere + " {0} = '{1}' ", tableDataCondition[0], tableParameterCondition[0]);
+                        Cond = WhereConditionGoodsValues;
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(tableParameterCondition[1].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsValues;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            conditionWhere = WhereConditionGoodsValues;
+                            Cond = WhereConditionGoodsValues;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[2].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsValues;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            conditionWhere = WhereConditionGoodsValues;
+                            Cond = WhereConditionGoodsValues;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[3].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsValues;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            conditionWhere = WhereConditionGoodsValues;
+                            Cond = WhereConditionGoodsValues;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[4].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsValues;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            conditionWhere = WhereConditionGoodsValues;
+                            Cond = WhereConditionGoodsValues;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[5].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsValues;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            conditionWhere = WhereConditionGoodsValues;
+                            Cond = WhereConditionGoodsValues;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[6].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsValues;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            conditionWhere = WhereConditionGoodsValues;
+                            Cond = WhereConditionGoodsValues;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[7].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsValues;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            conditionWhere = WhereConditionGoodsValues;
+                            Cond = WhereConditionGoodsValues;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[8].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsValues;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            conditionWhere = WhereConditionGoodsValues;
+                            Cond = WhereConditionGoodsValues;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[9].ToString().Trim()))
+                        {
+                            temp = WhereConditionGoodsValues;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[9], tableParameterCondition[9]);
+                            }
+                            else
+                            {
+                                WhereConditionGoodsValues = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[9], tableParameterCondition[9]);
+                            }
+                            conditionWhere = WhereConditionGoodsValues;
+                            Cond = WhereConditionGoodsValues;
+                        }
+                    }
+
+                        break;
+
                 case 7:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE DateOldValue > " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
+
+                    if (!String.IsNullOrEmpty(tableParameterCondition[0].ToString().Trim()))
+                    {
+                        temp = WhereConditionInvoicesHead;
+                        WhereConditionInvoicesHead = String.Format(conditionWhere + " {0} = '{1}' ", tableDataCondition[0], tableParameterCondition[0]);
+                        Cond = WhereConditionInvoicesHead;
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(tableParameterCondition[1].ToString().Trim()))
+                        {
+                            temp = WhereConditionInvoicesHead;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionInvoicesHead = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            else
+                            {
+                                WhereConditionInvoicesHead = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            conditionWhere = WhereConditionInvoicesHead;
+                            Cond = WhereConditionInvoicesHead;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[2].ToString().Trim()))
+                        {
+                            temp = WhereConditionInvoicesHead;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionInvoicesHead = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            else
+                            {
+                                WhereConditionInvoicesHead = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            conditionWhere = WhereConditionInvoicesHead;
+                            Cond = WhereConditionInvoicesHead;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[3].ToString().Trim()))
+                        {
+                            temp = WhereConditionInvoicesHead;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionInvoicesHead = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            else
+                            {
+                                WhereConditionInvoicesHead = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            conditionWhere = WhereConditionInvoicesHead;
+                            Cond = WhereConditionInvoicesHead;
+                        }
+                    }
+
                     break;
+
                 case 8:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE VAT < " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
-                    break;
+
+                    if (!String.IsNullOrEmpty(tableParameterCondition[0].ToString().Trim()))
+                    {
+                        temp = WhereConditionInvoicesRows;
+                        WhereConditionInvoicesRows = String.Format(conditionWhere + " {0} = '{1}' ", tableDataCondition[0], tableParameterCondition[0]);
+                        Cond = WhereConditionInvoicesRows;
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(tableParameterCondition[1].ToString().Trim()))
+                        {
+                            temp = WhereConditionInvoicesRows;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            else
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            conditionWhere = WhereConditionInvoicesRows;
+                            Cond = WhereConditionInvoicesRows;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[2].ToString().Trim()))
+                        {
+                            temp = WhereConditionInvoicesRows;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            else
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            conditionWhere = WhereConditionInvoicesRows;
+                            Cond = WhereConditionInvoicesRows;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[3].ToString().Trim()))
+                        {
+                            temp = WhereConditionInvoicesRows;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            else
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            conditionWhere = WhereConditionInvoicesRows;
+                            Cond = WhereConditionInvoicesRows;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[4].ToString().Trim()))
+                        {
+                            temp = WhereConditionInvoicesRows;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            else
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            conditionWhere = WhereConditionInvoicesRows;
+                            Cond = WhereConditionInvoicesRows;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[5].ToString().Trim()))
+                        {
+                            temp = WhereConditionInvoicesRows;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            else
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            conditionWhere = WhereConditionInvoicesRows;
+                            Cond = WhereConditionInvoicesRows;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[6].ToString().Trim()))
+                        {
+                            temp = WhereConditionInvoicesRows;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            else
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            conditionWhere = WhereConditionInvoicesRows;
+                            Cond = WhereConditionInvoicesRows;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[7].ToString().Trim()))
+                        {
+                            temp = WhereConditionInvoicesRows;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            else
+                            {
+                                WhereConditionInvoicesRows = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            conditionWhere = WhereConditionInvoicesRows;
+                            Cond = WhereConditionInvoicesRows;
+                        }
+                    }
+
+                        break;
+
                 case 9:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE Price < " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
+
+                    if (!String.IsNullOrEmpty(tableParameterCondition[0].ToString().Trim()))
+                    {
+                        temp = WhereConditionMovements;
+                        WhereConditionMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[0], tableParameterCondition[0]);
+                        Cond = WhereConditionMovements;
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(tableParameterCondition[1].ToString().Trim()))
+                        {
+                            temp = WhereConditionMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            else
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            conditionWhere = WhereConditionMovements;
+                            Cond = WhereConditionMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[2].ToString().Trim()))
+                        {
+                            temp = WhereConditionMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            else
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            conditionWhere = WhereConditionMovements;
+                            Cond = WhereConditionMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[3].ToString().Trim()))
+                        {
+                            temp = WhereConditionMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            else
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            conditionWhere = WhereConditionMovements;
+                            Cond = WhereConditionMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[4].ToString().Trim()))
+                        {
+                            temp = WhereConditionMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            else
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            conditionWhere = WhereConditionMovements;
+                            Cond = WhereConditionMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[5].ToString().Trim()))
+                        {
+                            temp = WhereConditionMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            else
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            conditionWhere = WhereConditionMovements;
+                            Cond = WhereConditionMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[6].ToString().Trim()))
+                        {
+                            temp = WhereConditionMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            else
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            conditionWhere = WhereConditionMovements;
+                            Cond = WhereConditionMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[7].ToString().Trim()))
+                        {
+                            temp = WhereConditionMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            else
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            conditionWhere = WhereConditionMovements;
+                            Cond = WhereConditionMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[8].ToString().Trim()))
+                        {
+                            temp = WhereConditionMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            else
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            conditionWhere = WhereConditionMovements;
+                            Cond = WhereConditionMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[9].ToString().Trim()))
+                        {
+                            temp = WhereConditionMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[9], tableParameterCondition[9]);
+                            }
+                            else
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[9], tableParameterCondition[9]);
+                            }
+                            conditionWhere = WhereConditionMovements;
+                            Cond = WhereConditionMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[10].ToString().Trim()))
+                        {
+                            temp = WhereConditionMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[10], tableParameterCondition[10]);
+                            }
+                            else
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[10], tableParameterCondition[10]);
+                            }
+                            conditionWhere = WhereConditionMovements;
+                            Cond = WhereConditionMovements;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[11].ToString().Trim()))
+                        {
+                            temp = WhereConditionMovements;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[11], tableParameterCondition[11]);
+                            }
+                            else
+                            {
+                                WhereConditionMovements = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[11], tableParameterCondition[11]);
+                            }
+                            conditionWhere = WhereConditionMovements;
+                            Cond = WhereConditionMovements;
+
+                        }
+
+                    }
+
+
                     break;
+
                 case 10:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE DateOldValue < " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
-                    break;
-                case 11:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE VAT <= " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
-                    break;
-                case 12:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE Price <= " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
-                    break;
-                case 13:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE DateOldValue <= " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
-                    break;
-                case 14:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE VAT >= " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
-                    break;
-                case 15:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE Price >= " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
-                    break;
-                case 16:
-                    temp = WhereConditionArchiveGoodsValue;
-                    WhereConditionArchiveGoodsValue = "WHERE DateOldValue >= " + GetWhereParameters();
-                    Cond = WhereConditionArchiveGoodsValue;
+
+                    if (!String.IsNullOrEmpty(tableParameterCondition[0].ToString().Trim()))
+                    {
+                        temp = WhereConditionSuppliers;
+                        WhereConditionSuppliers = String.Format(conditionWhere + " {0} = '{1}' ", tableDataCondition[0], tableParameterCondition[0]);
+                        Cond = WhereConditionSuppliers;
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(tableParameterCondition[1].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[1], tableParameterCondition[1]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[2].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[2], tableParameterCondition[2]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[3].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[3], tableParameterCondition[3]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[4].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[4], tableParameterCondition[4]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[5].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[5], tableParameterCondition[5]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[6].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[6], tableParameterCondition[6]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[7].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[7], tableParameterCondition[7]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[8].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[8], tableParameterCondition[8]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[9].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[9], tableParameterCondition[9]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[9], tableParameterCondition[9]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[10].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[10], tableParameterCondition[10]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[10], tableParameterCondition[10]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[11].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[11], tableParameterCondition[11]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[11], tableParameterCondition[11]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[12].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[12], tableParameterCondition[12]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[12], tableParameterCondition[12]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[13].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[13], tableParameterCondition[13]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[13], tableParameterCondition[13]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[14].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[14], tableParameterCondition[14]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[14], tableParameterCondition[14]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }
+
+                        if (!String.IsNullOrEmpty(tableParameterCondition[15].ToString().Trim()))
+                        {
+                            temp = WhereConditionSuppliers;
+
+                            if (conditionWhere.Trim().Contains("WHERE") && (!conditionWhere.Contains("=") || conditionWhere.Contains("BETWEEN") || conditionWhere.Contains("AND") || conditionWhere.Contains("or") || conditionWhere.Contains("NOT") || conditionWhere.Contains("LIKE") || conditionWhere.Contains("NOT LIKE")))
+
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " {0} " + op + " '{1}' ", tableDataCondition[15], tableParameterCondition[15]);
+                            }
+                            else
+                            {
+                                WhereConditionSuppliers = String.Format(conditionWhere + " AND {0} " + op + " '{1}' ", tableDataCondition[15], tableParameterCondition[15]);
+                            }
+                            conditionWhere = WhereConditionSuppliers;
+                            Cond = WhereConditionSuppliers;
+                        }                   
+
+                    }
+
                     break;
 
                 default:
@@ -843,11 +3761,11 @@ namespace StoreManagement.DbManagment
         {
             WhereConditionToReturn = SetArchiveGoodsValueWhereCondition(data);
         }
+
         public string GetWhereCondition()
         {
             return WhereConditionToReturn;
         }
-
         
         public string SetQuery(string QueryDaFare, List<String> parametri)
         {
