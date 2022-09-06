@@ -102,6 +102,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WinCustomers.resx">
+      <DependentUpon>WinCustomers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WinInvoices.resx">
       <DependentUpon>WinInvoices.cs</DependentUpon>
     </EmbeddedResource>

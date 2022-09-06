@@ -22,3 +22,4 @@ C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f63
 C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\obj\Debug\StoreManagement.csproj.CoreCompileInputs.cache
 C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\obj\Debug\StoreManagement.exe
 C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\obj\Debug\StoreManagement.pdb
+C:\Users\dpetrillo\source\repos\Davidepetrillo\gcangianobb-storemanagement-77f633cf3e88 (2)\gcangianobb-storemanagement-77f633cf3e88\StoreManagement\obj\Debug\StoreManagement.WinCustomers.resources
