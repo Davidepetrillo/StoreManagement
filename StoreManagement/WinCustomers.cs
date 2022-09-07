@@ -31,5 +31,51 @@ namespace StoreManagement
         {
 
         }
+
+        private void WinCustomers_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void VATCodeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VatCodeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StatusCustomerTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StatusCustomerLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PECLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CompanyLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

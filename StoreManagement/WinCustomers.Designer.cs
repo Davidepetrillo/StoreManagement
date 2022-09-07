@@ -29,257 +29,561 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.NameLegalOwner = new System.Windows.Forms.Label();
-            this.SurnameLegalOwner = new System.Windows.Forms.Label();
-            this.CompanyName = new System.Windows.Forms.Label();
-            this.Address = new System.Windows.Forms.Label();
-            this.CivicNumber = new System.Windows.Forms.Label();
-            this.ZipCode = new System.Windows.Forms.Label();
-            this.City = new System.Windows.Forms.Label();
-            this.Region = new System.Windows.Forms.Label();
-            this.Nation = new System.Windows.Forms.Label();
-            this.Phone = new System.Windows.Forms.Label();
-            this.Email = new System.Windows.Forms.Label();
-            this.PEC = new System.Windows.Forms.Label();
-            this.WebSite = new System.Windows.Forms.Label();
-            this.SDI_Code = new System.Windows.Forms.Label();
-            this.VAT_Code = new System.Windows.Forms.Label();
-            this.StatusCustmer = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NameLegalOwnerGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SurnameLegalOwnerGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompanyNameGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddressGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CivicNumberGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ZipCodeGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CityGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RegionGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NationGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PECGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WebSiteGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDI_CodeGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VAT_CodeGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusCustomerGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Select = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.Button();
+            this.Insert = new System.Windows.Forms.Button();
+            this.Update = new System.Windows.Forms.Button();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.SurnameTextBox = new System.Windows.Forms.TextBox();
+            this.CompanyTextBox = new System.Windows.Forms.TextBox();
+            this.AddressTextBox = new System.Windows.Forms.TextBox();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.SurnameLabel = new System.Windows.Forms.Label();
+            this.CivicNumberTextBox = new System.Windows.Forms.TextBox();
+            this.CompanyLabel = new System.Windows.Forms.Label();
+            this.CityTextBox = new System.Windows.Forms.TextBox();
+            this.ZipCodeTextBox = new System.Windows.Forms.TextBox();
+            this.RegionTextBox = new System.Windows.Forms.TextBox();
+            this.NationTextBox = new System.Windows.Forms.TextBox();
+            this.AddressLabel = new System.Windows.Forms.Label();
+            this.CivicNumberLabel = new System.Windows.Forms.Label();
+            this.CityLabel = new System.Windows.Forms.Label();
+            this.ZipCodeLabel = new System.Windows.Forms.Label();
+            this.RegionLabel = new System.Windows.Forms.Label();
+            this.NationLabel = new System.Windows.Forms.Label();
+            this.StatusCustomerLabel = new System.Windows.Forms.Label();
+            this.VATCodeLabel = new System.Windows.Forms.Label();
+            this.SDICodeLabel = new System.Windows.Forms.Label();
+            this.WebSiteLabel = new System.Windows.Forms.Label();
+            this.PECLabel = new System.Windows.Forms.Label();
+            this.EmailLabel = new System.Windows.Forms.Label();
+            this.StatusCustomerTextBox = new System.Windows.Forms.TextBox();
+            this.VatCodeTextBox = new System.Windows.Forms.TextBox();
+            this.SdiCodeTextBox = new System.Windows.Forms.TextBox();
+            this.WebsiteTextBox = new System.Windows.Forms.TextBox();
+            this.PhoneLabel = new System.Windows.Forms.Label();
+            this.PecTextBox = new System.Windows.Forms.TextBox();
+            this.EmailTextBox = new System.Windows.Forms.TextBox();
+            this.PhoneTextBox = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // NameLegalOwner
+            // dataGridView1
             // 
-            this.NameLegalOwner.BackColor = System.Drawing.Color.Yellow;
-            this.NameLegalOwner.Enabled = false;
-            this.NameLegalOwner.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.NameLegalOwner.Location = new System.Drawing.Point(3, 0);
-            this.NameLegalOwner.Name = "NameLegalOwner";
-            this.NameLegalOwner.Size = new System.Drawing.Size(97, 57);
-            this.NameLegalOwner.TabIndex = 0;
-            this.NameLegalOwner.Text = "Name";
-            this.NameLegalOwner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NameLegalOwnerGS,
+            this.SurnameLegalOwnerGS,
+            this.CompanyNameGS,
+            this.AddressGS,
+            this.CivicNumberGS,
+            this.ZipCodeGS,
+            this.CityGS,
+            this.RegionGS,
+            this.NationGS,
+            this.PhoneGS,
+            this.EmailGS,
+            this.PECGS,
+            this.WebSiteGS,
+            this.SDI_CodeGS,
+            this.VAT_CodeGS,
+            this.StatusCustomerGS});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 404);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1698, 278);
+            this.dataGridView1.TabIndex = 48;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // SurnameLegalOwner
+            // NameLegalOwnerGS
             // 
-            this.SurnameLegalOwner.BackColor = System.Drawing.Color.Yellow;
-            this.SurnameLegalOwner.Enabled = false;
-            this.SurnameLegalOwner.Location = new System.Drawing.Point(106, 0);
-            this.SurnameLegalOwner.Name = "SurnameLegalOwner";
-            this.SurnameLegalOwner.Size = new System.Drawing.Size(97, 57);
-            this.SurnameLegalOwner.TabIndex = 1;
-            this.SurnameLegalOwner.Text = "Surname ";
-            this.SurnameLegalOwner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NameLegalOwnerGS.Frozen = true;
+            this.NameLegalOwnerGS.HeaderText = "Name";
+            this.NameLegalOwnerGS.MinimumWidth = 6;
+            this.NameLegalOwnerGS.Name = "NameLegalOwnerGS";
+            this.NameLegalOwnerGS.ReadOnly = true;
+            this.NameLegalOwnerGS.Width = 150;
             // 
-            // CompanyName
+            // SurnameLegalOwnerGS
             // 
-            this.CompanyName.BackColor = System.Drawing.Color.Yellow;
-            this.CompanyName.Enabled = false;
-            this.CompanyName.Location = new System.Drawing.Point(209, 0);
-            this.CompanyName.Name = "CompanyName";
-            this.CompanyName.Size = new System.Drawing.Size(97, 57);
-            this.CompanyName.TabIndex = 2;
-            this.CompanyName.Text = "Company Name";
-            this.CompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SurnameLegalOwnerGS.Frozen = true;
+            this.SurnameLegalOwnerGS.HeaderText = "Surname";
+            this.SurnameLegalOwnerGS.MinimumWidth = 6;
+            this.SurnameLegalOwnerGS.Name = "SurnameLegalOwnerGS";
+            this.SurnameLegalOwnerGS.ReadOnly = true;
+            this.SurnameLegalOwnerGS.Width = 150;
             // 
-            // Address
+            // CompanyNameGS
             // 
-            this.Address.BackColor = System.Drawing.Color.Yellow;
-            this.Address.Enabled = false;
-            this.Address.Location = new System.Drawing.Point(312, 0);
-            this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(97, 57);
-            this.Address.TabIndex = 3;
-            this.Address.Text = "Address";
-            this.Address.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CompanyNameGS.Frozen = true;
+            this.CompanyNameGS.HeaderText = "Company";
+            this.CompanyNameGS.MinimumWidth = 6;
+            this.CompanyNameGS.Name = "CompanyNameGS";
+            this.CompanyNameGS.ReadOnly = true;
+            this.CompanyNameGS.Width = 150;
             // 
-            // CivicNumber
+            // AddressGS
             // 
-            this.CivicNumber.BackColor = System.Drawing.Color.Yellow;
-            this.CivicNumber.Enabled = false;
-            this.CivicNumber.Location = new System.Drawing.Point(415, 0);
-            this.CivicNumber.Name = "CivicNumber";
-            this.CivicNumber.Size = new System.Drawing.Size(97, 57);
-            this.CivicNumber.TabIndex = 4;
-            this.CivicNumber.Text = "Civic Number";
-            this.CivicNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.AddressGS.HeaderText = "Address";
+            this.AddressGS.MinimumWidth = 6;
+            this.AddressGS.Name = "AddressGS";
+            this.AddressGS.Width = 150;
             // 
-            // ZipCode
+            // CivicNumberGS
             // 
-            this.ZipCode.BackColor = System.Drawing.Color.Yellow;
-            this.ZipCode.Enabled = false;
-            this.ZipCode.Location = new System.Drawing.Point(518, 0);
-            this.ZipCode.Name = "ZipCode";
-            this.ZipCode.Size = new System.Drawing.Size(97, 57);
-            this.ZipCode.TabIndex = 5;
-            this.ZipCode.Text = "Zip Code";
-            this.ZipCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CivicNumberGS.HeaderText = "CivicNumber";
+            this.CivicNumberGS.MinimumWidth = 6;
+            this.CivicNumberGS.Name = "CivicNumberGS";
+            this.CivicNumberGS.Width = 150;
             // 
-            // City
+            // ZipCodeGS
             // 
-            this.City.BackColor = System.Drawing.Color.Yellow;
-            this.City.Enabled = false;
-            this.City.Location = new System.Drawing.Point(621, 0);
-            this.City.Name = "City";
-            this.City.Size = new System.Drawing.Size(97, 57);
-            this.City.TabIndex = 6;
-            this.City.Text = "City";
-            this.City.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ZipCodeGS.HeaderText = "Zip";
+            this.ZipCodeGS.MinimumWidth = 6;
+            this.ZipCodeGS.Name = "ZipCodeGS";
+            this.ZipCodeGS.Width = 150;
             // 
-            // Region
+            // CityGS
             // 
-            this.Region.BackColor = System.Drawing.Color.Yellow;
-            this.Region.Enabled = false;
-            this.Region.Location = new System.Drawing.Point(724, 0);
-            this.Region.Name = "Region";
-            this.Region.Size = new System.Drawing.Size(97, 57);
-            this.Region.TabIndex = 7;
-            this.Region.Text = "Region";
-            this.Region.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Region.Click += new System.EventHandler(this.label7_Click);
+            this.CityGS.HeaderText = "City";
+            this.CityGS.MinimumWidth = 6;
+            this.CityGS.Name = "CityGS";
+            this.CityGS.Width = 150;
             // 
-            // Nation
+            // RegionGS
             // 
-            this.Nation.BackColor = System.Drawing.Color.Yellow;
-            this.Nation.Enabled = false;
-            this.Nation.Location = new System.Drawing.Point(827, 0);
-            this.Nation.Name = "Nation";
-            this.Nation.Size = new System.Drawing.Size(97, 57);
-            this.Nation.TabIndex = 8;
-            this.Nation.Text = "Nation";
-            this.Nation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionGS.HeaderText = "Region";
+            this.RegionGS.MinimumWidth = 6;
+            this.RegionGS.Name = "RegionGS";
+            this.RegionGS.Width = 150;
             // 
-            // Phone
+            // NationGS
             // 
-            this.Phone.BackColor = System.Drawing.Color.Yellow;
-            this.Phone.Enabled = false;
-            this.Phone.Location = new System.Drawing.Point(930, 0);
-            this.Phone.Name = "Phone";
-            this.Phone.Size = new System.Drawing.Size(97, 57);
-            this.Phone.TabIndex = 9;
-            this.Phone.Text = "Phone";
-            this.Phone.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NationGS.HeaderText = "Nation";
+            this.NationGS.MinimumWidth = 6;
+            this.NationGS.Name = "NationGS";
+            this.NationGS.Width = 150;
             // 
-            // Email
+            // PhoneGS
             // 
-            this.Email.BackColor = System.Drawing.Color.Yellow;
-            this.Email.Enabled = false;
-            this.Email.Location = new System.Drawing.Point(1033, 0);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(97, 57);
-            this.Email.TabIndex = 10;
-            this.Email.Text = "Email";
-            this.Email.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PhoneGS.HeaderText = "Phone";
+            this.PhoneGS.MinimumWidth = 6;
+            this.PhoneGS.Name = "PhoneGS";
+            this.PhoneGS.Width = 150;
             // 
-            // PEC
+            // EmailGS
             // 
-            this.PEC.BackColor = System.Drawing.Color.Yellow;
-            this.PEC.Enabled = false;
-            this.PEC.Location = new System.Drawing.Point(1136, 0);
-            this.PEC.Name = "PEC";
-            this.PEC.Size = new System.Drawing.Size(97, 57);
-            this.PEC.TabIndex = 11;
-            this.PEC.Text = "Pec";
-            this.PEC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EmailGS.HeaderText = "Email";
+            this.EmailGS.MinimumWidth = 6;
+            this.EmailGS.Name = "EmailGS";
+            this.EmailGS.Width = 150;
             // 
-            // WebSite
+            // PECGS
             // 
-            this.WebSite.BackColor = System.Drawing.Color.Yellow;
-            this.WebSite.Enabled = false;
-            this.WebSite.Location = new System.Drawing.Point(1239, 0);
-            this.WebSite.Name = "WebSite";
-            this.WebSite.Size = new System.Drawing.Size(97, 57);
-            this.WebSite.TabIndex = 12;
-            this.WebSite.Text = "Web Site";
-            this.WebSite.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PECGS.HeaderText = "PEC";
+            this.PECGS.MinimumWidth = 6;
+            this.PECGS.Name = "PECGS";
+            this.PECGS.Width = 150;
             // 
-            // SDI_Code
+            // WebSiteGS
             // 
-            this.SDI_Code.BackColor = System.Drawing.Color.Yellow;
-            this.SDI_Code.Enabled = false;
-            this.SDI_Code.Location = new System.Drawing.Point(1342, 0);
-            this.SDI_Code.Name = "SDI_Code";
-            this.SDI_Code.Size = new System.Drawing.Size(97, 57);
-            this.SDI_Code.TabIndex = 13;
-            this.SDI_Code.Text = "SDI";
-            this.SDI_Code.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.WebSiteGS.HeaderText = "WebSite";
+            this.WebSiteGS.MinimumWidth = 6;
+            this.WebSiteGS.Name = "WebSiteGS";
+            this.WebSiteGS.Width = 150;
             // 
-            // VAT_Code
+            // SDI_CodeGS
             // 
-            this.VAT_Code.BackColor = System.Drawing.Color.Yellow;
-            this.VAT_Code.Enabled = false;
-            this.VAT_Code.Location = new System.Drawing.Point(1445, 0);
-            this.VAT_Code.Name = "VAT_Code";
-            this.VAT_Code.Size = new System.Drawing.Size(97, 57);
-            this.VAT_Code.TabIndex = 14;
-            this.VAT_Code.Text = "VAT";
-            this.VAT_Code.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SDI_CodeGS.HeaderText = "SDI";
+            this.SDI_CodeGS.MinimumWidth = 6;
+            this.SDI_CodeGS.Name = "SDI_CodeGS";
+            this.SDI_CodeGS.Width = 150;
             // 
-            // StatusCustmer
+            // VAT_CodeGS
             // 
-            this.StatusCustmer.BackColor = System.Drawing.Color.Yellow;
-            this.StatusCustmer.Enabled = false;
-            this.StatusCustmer.Location = new System.Drawing.Point(1548, 0);
-            this.StatusCustmer.Name = "StatusCustmer";
-            this.StatusCustmer.Size = new System.Drawing.Size(105, 57);
-            this.StatusCustmer.TabIndex = 15;
-            this.StatusCustmer.Text = "Status Custmer";
-            this.StatusCustmer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.VAT_CodeGS.HeaderText = "VAT";
+            this.VAT_CodeGS.MinimumWidth = 6;
+            this.VAT_CodeGS.Name = "VAT_CodeGS";
+            this.VAT_CodeGS.Width = 150;
             // 
-            // tableLayoutPanel1
+            // StatusCustomerGS
             // 
-            this.tableLayoutPanel1.ColumnCount = 16;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.Controls.Add(this.StatusCustmer, 15, 0);
-            this.tableLayoutPanel1.Controls.Add(this.VAT_Code, 14, 0);
-            this.tableLayoutPanel1.Controls.Add(this.SDI_Code, 13, 0);
-            this.tableLayoutPanel1.Controls.Add(this.WebSite, 12, 0);
-            this.tableLayoutPanel1.Controls.Add(this.PEC, 11, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Email, 10, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Phone, 9, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Nation, 8, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Region, 7, 0);
-            this.tableLayoutPanel1.Controls.Add(this.City, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ZipCode, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.CivicNumber, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Address, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.CompanyName, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.SurnameLegalOwner, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.NameLegalOwner, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 154);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 476F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1656, 537);
-            this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.StatusCustomerGS.HeaderText = "StatusCustomer";
+            this.StatusCustomerGS.MinimumWidth = 6;
+            this.StatusCustomerGS.Name = "StatusCustomerGS";
+            this.StatusCustomerGS.Width = 150;
+            // 
+            // Select
+            // 
+            this.Select.BackColor = System.Drawing.Color.Blue;
+            this.Select.ForeColor = System.Drawing.Color.White;
+            this.Select.Location = new System.Drawing.Point(12, 332);
+            this.Select.Name = "Select";
+            this.Select.Size = new System.Drawing.Size(125, 43);
+            this.Select.TabIndex = 65;
+            this.Select.Text = "CERCA";
+            this.Select.UseVisualStyleBackColor = false;
+            // 
+            // Delete
+            // 
+            this.Delete.BackColor = System.Drawing.Color.Red;
+            this.Delete.ForeColor = System.Drawing.Color.White;
+            this.Delete.Location = new System.Drawing.Point(890, 332);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(125, 43);
+            this.Delete.TabIndex = 66;
+            this.Delete.Text = "ELIMINA";
+            this.Delete.UseVisualStyleBackColor = false;
+            // 
+            // Insert
+            // 
+            this.Insert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.Insert.ForeColor = System.Drawing.Color.White;
+            this.Insert.Location = new System.Drawing.Point(312, 332);
+            this.Insert.Name = "Insert";
+            this.Insert.Size = new System.Drawing.Size(125, 43);
+            this.Insert.TabIndex = 67;
+            this.Insert.Text = "INSERISCI";
+            this.Insert.UseVisualStyleBackColor = false;
+            // 
+            // Update
+            // 
+            this.Update.BackColor = System.Drawing.Color.Yellow;
+            this.Update.ForeColor = System.Drawing.Color.Black;
+            this.Update.Location = new System.Drawing.Point(605, 332);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(125, 43);
+            this.Update.TabIndex = 68;
+            this.Update.Text = "AGGIORNA";
+            this.Update.UseVisualStyleBackColor = false;
+            // 
+            // NameTextBox
+            // 
+            this.NameTextBox.Location = new System.Drawing.Point(12, 63);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(125, 22);
+            this.NameTextBox.TabIndex = 73;
+            // 
+            // SurnameTextBox
+            // 
+            this.SurnameTextBox.Location = new System.Drawing.Point(164, 63);
+            this.SurnameTextBox.Name = "SurnameTextBox";
+            this.SurnameTextBox.Size = new System.Drawing.Size(125, 22);
+            this.SurnameTextBox.TabIndex = 90;
+            // 
+            // CompanyTextBox
+            // 
+            this.CompanyTextBox.Location = new System.Drawing.Point(12, 129);
+            this.CompanyTextBox.Name = "CompanyTextBox";
+            this.CompanyTextBox.Size = new System.Drawing.Size(125, 22);
+            this.CompanyTextBox.TabIndex = 98;
+            // 
+            // AddressTextBox
+            // 
+            this.AddressTextBox.Location = new System.Drawing.Point(164, 129);
+            this.AddressTextBox.Name = "AddressTextBox";
+            this.AddressTextBox.Size = new System.Drawing.Size(125, 22);
+            this.AddressTextBox.TabIndex = 106;
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(12, 34);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(44, 16);
+            this.NameLabel.TabIndex = 133;
+            this.NameLabel.Text = "Name";
+            // 
+            // SurnameLabel
+            // 
+            this.SurnameLabel.AutoSize = true;
+            this.SurnameLabel.Location = new System.Drawing.Point(161, 34);
+            this.SurnameLabel.Name = "SurnameLabel";
+            this.SurnameLabel.Size = new System.Drawing.Size(61, 16);
+            this.SurnameLabel.TabIndex = 134;
+            this.SurnameLabel.Text = "Surname";
+            // 
+            // CivicNumberTextBox
+            // 
+            this.CivicNumberTextBox.Location = new System.Drawing.Point(313, 129);
+            this.CivicNumberTextBox.Name = "CivicNumberTextBox";
+            this.CivicNumberTextBox.Size = new System.Drawing.Size(125, 22);
+            this.CivicNumberTextBox.TabIndex = 135;
+            // 
+            // CompanyLabel
+            // 
+            this.CompanyLabel.AutoSize = true;
+            this.CompanyLabel.Location = new System.Drawing.Point(12, 100);
+            this.CompanyLabel.Name = "CompanyLabel";
+            this.CompanyLabel.Size = new System.Drawing.Size(65, 16);
+            this.CompanyLabel.TabIndex = 136;
+            this.CompanyLabel.Text = "Company";
+            this.CompanyLabel.Click += new System.EventHandler(this.CompanyLabel_Click);
+            // 
+            // CityTextBox
+            // 
+            this.CityTextBox.Location = new System.Drawing.Point(458, 129);
+            this.CityTextBox.Name = "CityTextBox";
+            this.CityTextBox.Size = new System.Drawing.Size(125, 22);
+            this.CityTextBox.TabIndex = 137;
+            // 
+            // ZipCodeTextBox
+            // 
+            this.ZipCodeTextBox.Location = new System.Drawing.Point(603, 129);
+            this.ZipCodeTextBox.Name = "ZipCodeTextBox";
+            this.ZipCodeTextBox.Size = new System.Drawing.Size(125, 22);
+            this.ZipCodeTextBox.TabIndex = 138;
+            // 
+            // RegionTextBox
+            // 
+            this.RegionTextBox.Location = new System.Drawing.Point(750, 129);
+            this.RegionTextBox.Name = "RegionTextBox";
+            this.RegionTextBox.Size = new System.Drawing.Size(125, 22);
+            this.RegionTextBox.TabIndex = 139;
+            // 
+            // NationTextBox
+            // 
+            this.NationTextBox.Location = new System.Drawing.Point(890, 129);
+            this.NationTextBox.Name = "NationTextBox";
+            this.NationTextBox.Size = new System.Drawing.Size(125, 22);
+            this.NationTextBox.TabIndex = 140;
+            // 
+            // AddressLabel
+            // 
+            this.AddressLabel.AutoSize = true;
+            this.AddressLabel.Location = new System.Drawing.Point(161, 100);
+            this.AddressLabel.Name = "AddressLabel";
+            this.AddressLabel.Size = new System.Drawing.Size(58, 16);
+            this.AddressLabel.TabIndex = 141;
+            this.AddressLabel.Text = "Address";
+            // 
+            // CivicNumberLabel
+            // 
+            this.CivicNumberLabel.AutoSize = true;
+            this.CivicNumberLabel.Location = new System.Drawing.Point(305, 100);
+            this.CivicNumberLabel.Name = "CivicNumberLabel";
+            this.CivicNumberLabel.Size = new System.Drawing.Size(90, 16);
+            this.CivicNumberLabel.TabIndex = 142;
+            this.CivicNumberLabel.Text = "Civic Number ";
+            // 
+            // CityLabel
+            // 
+            this.CityLabel.AutoSize = true;
+            this.CityLabel.Location = new System.Drawing.Point(454, 100);
+            this.CityLabel.Name = "CityLabel";
+            this.CityLabel.Size = new System.Drawing.Size(29, 16);
+            this.CityLabel.TabIndex = 143;
+            this.CityLabel.Text = "City";
+            // 
+            // ZipCodeLabel
+            // 
+            this.ZipCodeLabel.AutoSize = true;
+            this.ZipCodeLabel.Location = new System.Drawing.Point(602, 100);
+            this.ZipCodeLabel.Name = "ZipCodeLabel";
+            this.ZipCodeLabel.Size = new System.Drawing.Size(62, 16);
+            this.ZipCodeLabel.TabIndex = 144;
+            this.ZipCodeLabel.Text = "Zip Code";
+            // 
+            // RegionLabel
+            // 
+            this.RegionLabel.AutoSize = true;
+            this.RegionLabel.Location = new System.Drawing.Point(747, 100);
+            this.RegionLabel.Name = "RegionLabel";
+            this.RegionLabel.Size = new System.Drawing.Size(51, 16);
+            this.RegionLabel.TabIndex = 145;
+            this.RegionLabel.Text = "Region";
+            // 
+            // NationLabel
+            // 
+            this.NationLabel.AutoSize = true;
+            this.NationLabel.Location = new System.Drawing.Point(887, 100);
+            this.NationLabel.Name = "NationLabel";
+            this.NationLabel.Size = new System.Drawing.Size(46, 16);
+            this.NationLabel.TabIndex = 146;
+            this.NationLabel.Text = "Nation";
+            // 
+            // StatusCustomerLabel
+            // 
+            this.StatusCustomerLabel.AutoSize = true;
+            this.StatusCustomerLabel.Location = new System.Drawing.Point(310, 241);
+            this.StatusCustomerLabel.Name = "StatusCustomerLabel";
+            this.StatusCustomerLabel.Size = new System.Drawing.Size(104, 16);
+            this.StatusCustomerLabel.TabIndex = 160;
+            this.StatusCustomerLabel.Text = "Status Customer";
+            this.StatusCustomerLabel.Click += new System.EventHandler(this.StatusCustomerLabel_Click);
+            // 
+            // VATCodeLabel
+            // 
+            this.VATCodeLabel.AutoSize = true;
+            this.VATCodeLabel.Location = new System.Drawing.Point(168, 241);
+            this.VATCodeLabel.Name = "VATCodeLabel";
+            this.VATCodeLabel.Size = new System.Drawing.Size(34, 16);
+            this.VATCodeLabel.TabIndex = 159;
+            this.VATCodeLabel.Text = "VAT";
+            this.VATCodeLabel.Click += new System.EventHandler(this.VATCodeLabel_Click);
+            // 
+            // SDICodeLabel
+            // 
+            this.SDICodeLabel.AutoSize = true;
+            this.SDICodeLabel.Location = new System.Drawing.Point(12, 241);
+            this.SDICodeLabel.Name = "SDICodeLabel";
+            this.SDICodeLabel.Size = new System.Drawing.Size(29, 16);
+            this.SDICodeLabel.TabIndex = 158;
+            this.SDICodeLabel.Text = "SDI";
+            // 
+            // WebSiteLabel
+            // 
+            this.WebSiteLabel.AutoSize = true;
+            this.WebSiteLabel.Location = new System.Drawing.Point(747, 171);
+            this.WebSiteLabel.Name = "WebSiteLabel";
+            this.WebSiteLabel.Size = new System.Drawing.Size(59, 16);
+            this.WebSiteLabel.TabIndex = 157;
+            this.WebSiteLabel.Text = "WebSite";
+            // 
+            // PECLabel
+            // 
+            this.PECLabel.AutoSize = true;
+            this.PECLabel.Location = new System.Drawing.Point(455, 171);
+            this.PECLabel.Name = "PECLabel";
+            this.PECLabel.Size = new System.Drawing.Size(34, 16);
+            this.PECLabel.TabIndex = 156;
+            this.PECLabel.Text = "PEC";
+            this.PECLabel.Click += new System.EventHandler(this.PECLabel_Click);
+            // 
+            // EmailLabel
+            // 
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Location = new System.Drawing.Point(161, 171);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(41, 16);
+            this.EmailLabel.TabIndex = 155;
+            this.EmailLabel.Text = "Email";
+            // 
+            // StatusCustomerTextBox
+            // 
+            this.StatusCustomerTextBox.Location = new System.Drawing.Point(307, 275);
+            this.StatusCustomerTextBox.Name = "StatusCustomerTextBox";
+            this.StatusCustomerTextBox.Size = new System.Drawing.Size(130, 22);
+            this.StatusCustomerTextBox.TabIndex = 154;
+            this.StatusCustomerTextBox.TextChanged += new System.EventHandler(this.StatusCustomerTextBox_TextChanged);
+            // 
+            // VatCodeTextBox
+            // 
+            this.VatCodeTextBox.Location = new System.Drawing.Point(164, 275);
+            this.VatCodeTextBox.Name = "VatCodeTextBox";
+            this.VatCodeTextBox.Size = new System.Drawing.Size(125, 22);
+            this.VatCodeTextBox.TabIndex = 153;
+            this.VatCodeTextBox.TextChanged += new System.EventHandler(this.VatCodeTextBox_TextChanged);
+            // 
+            // SdiCodeTextBox
+            // 
+            this.SdiCodeTextBox.Location = new System.Drawing.Point(12, 275);
+            this.SdiCodeTextBox.Name = "SdiCodeTextBox";
+            this.SdiCodeTextBox.Size = new System.Drawing.Size(125, 22);
+            this.SdiCodeTextBox.TabIndex = 152;
+            // 
+            // WebsiteTextBox
+            // 
+            this.WebsiteTextBox.Location = new System.Drawing.Point(750, 198);
+            this.WebsiteTextBox.Name = "WebsiteTextBox";
+            this.WebsiteTextBox.Size = new System.Drawing.Size(265, 22);
+            this.WebsiteTextBox.TabIndex = 151;
+            // 
+            // PhoneLabel
+            // 
+            this.PhoneLabel.AutoSize = true;
+            this.PhoneLabel.Location = new System.Drawing.Point(12, 171);
+            this.PhoneLabel.Name = "PhoneLabel";
+            this.PhoneLabel.Size = new System.Drawing.Size(46, 16);
+            this.PhoneLabel.TabIndex = 150;
+            this.PhoneLabel.Text = "Phone";
+            // 
+            // PecTextBox
+            // 
+            this.PecTextBox.Location = new System.Drawing.Point(457, 198);
+            this.PecTextBox.Name = "PecTextBox";
+            this.PecTextBox.Size = new System.Drawing.Size(270, 22);
+            this.PecTextBox.TabIndex = 149;
+            // 
+            // EmailTextBox
+            // 
+            this.EmailTextBox.Location = new System.Drawing.Point(164, 198);
+            this.EmailTextBox.Name = "EmailTextBox";
+            this.EmailTextBox.Size = new System.Drawing.Size(273, 22);
+            this.EmailTextBox.TabIndex = 148;
+            // 
+            // PhoneTextBox
+            // 
+            this.PhoneTextBox.Location = new System.Drawing.Point(12, 198);
+            this.PhoneTextBox.Name = "PhoneTextBox";
+            this.PhoneTextBox.Size = new System.Drawing.Size(125, 22);
+            this.PhoneTextBox.TabIndex = 147;
             // 
             // WinCustomers
             // 
             this.ClientSize = new System.Drawing.Size(1924, 730);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.StatusCustomerLabel);
+            this.Controls.Add(this.VATCodeLabel);
+            this.Controls.Add(this.SDICodeLabel);
+            this.Controls.Add(this.WebSiteLabel);
+            this.Controls.Add(this.PECLabel);
+            this.Controls.Add(this.EmailLabel);
+            this.Controls.Add(this.StatusCustomerTextBox);
+            this.Controls.Add(this.VatCodeTextBox);
+            this.Controls.Add(this.SdiCodeTextBox);
+            this.Controls.Add(this.WebsiteTextBox);
+            this.Controls.Add(this.PhoneLabel);
+            this.Controls.Add(this.PecTextBox);
+            this.Controls.Add(this.EmailTextBox);
+            this.Controls.Add(this.PhoneTextBox);
+            this.Controls.Add(this.NationLabel);
+            this.Controls.Add(this.RegionLabel);
+            this.Controls.Add(this.ZipCodeLabel);
+            this.Controls.Add(this.CityLabel);
+            this.Controls.Add(this.CivicNumberLabel);
+            this.Controls.Add(this.AddressLabel);
+            this.Controls.Add(this.NationTextBox);
+            this.Controls.Add(this.RegionTextBox);
+            this.Controls.Add(this.ZipCodeTextBox);
+            this.Controls.Add(this.CityTextBox);
+            this.Controls.Add(this.CompanyLabel);
+            this.Controls.Add(this.CivicNumberTextBox);
+            this.Controls.Add(this.SurnameLabel);
+            this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.AddressTextBox);
+            this.Controls.Add(this.CompanyTextBox);
+            this.Controls.Add(this.SurnameTextBox);
+            this.Controls.Add(this.NameTextBox);
+            this.Controls.Add(this.Update);
+            this.Controls.Add(this.Insert);
+            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.Select);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "WinCustomers";
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.WinCustomers_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -290,22 +594,58 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label NameLegalOwner;
-        private System.Windows.Forms.Label SurnameLegalOwner;
-        private System.Windows.Forms.Label CompanyName;
-        private System.Windows.Forms.Label Address;
-        private System.Windows.Forms.Label CivicNumber;
-        private System.Windows.Forms.Label ZipCode;
-        private System.Windows.Forms.Label City;
-        private System.Windows.Forms.Label Region;
-        private System.Windows.Forms.Label Nation;
-        private System.Windows.Forms.Label Phone;
-        private System.Windows.Forms.Label Email;
-        private System.Windows.Forms.Label PEC;
-        private System.Windows.Forms.Label WebSite;
-        private System.Windows.Forms.Label SDI_Code;
-        private System.Windows.Forms.Label VAT_Code;
-        private System.Windows.Forms.Label StatusCustmer;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button Select;
+        private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.Button Insert;
+        private System.Windows.Forms.Button Update;
+        private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.TextBox SurnameTextBox;
+        private System.Windows.Forms.TextBox CompanyTextBox;
+        private System.Windows.Forms.TextBox AddressTextBox;
+        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Label SurnameLabel;
+        private System.Windows.Forms.TextBox CivicNumberTextBox;
+        private System.Windows.Forms.Label CompanyLabel;
+        private System.Windows.Forms.TextBox CityTextBox;
+        private System.Windows.Forms.TextBox ZipCodeTextBox;
+        private System.Windows.Forms.TextBox RegionTextBox;
+        private System.Windows.Forms.TextBox NationTextBox;
+        private System.Windows.Forms.Label AddressLabel;
+        private System.Windows.Forms.Label CivicNumberLabel;
+        private System.Windows.Forms.Label CityLabel;
+        private System.Windows.Forms.Label ZipCodeLabel;
+        private System.Windows.Forms.Label RegionLabel;
+        private System.Windows.Forms.Label NationLabel;
+        private System.Windows.Forms.Label StatusCustomerLabel;
+        private System.Windows.Forms.Label VATCodeLabel;
+        private System.Windows.Forms.Label SDICodeLabel;
+        private System.Windows.Forms.Label WebSiteLabel;
+        private System.Windows.Forms.Label PECLabel;
+        private System.Windows.Forms.Label EmailLabel;
+        private System.Windows.Forms.TextBox StatusCustomerTextBox;
+        private System.Windows.Forms.TextBox VatCodeTextBox;
+        private System.Windows.Forms.TextBox SdiCodeTextBox;
+        private System.Windows.Forms.TextBox WebsiteTextBox;
+        private System.Windows.Forms.Label PhoneLabel;
+        private System.Windows.Forms.TextBox PecTextBox;
+        private System.Windows.Forms.TextBox EmailTextBox;
+        private System.Windows.Forms.TextBox PhoneTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameLegalOwnerGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SurnameLegalOwnerGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyNameGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AddressGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CivicNumberGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ZipCodeGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CityGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RegionGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NationGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmailGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PECGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WebSiteGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDI_CodeGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VAT_CodeGS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StatusCustomerGS;
     }
 }
