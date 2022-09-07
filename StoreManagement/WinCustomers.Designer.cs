@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dGV = new System.Windows.Forms.DataGridView();
             this.NameLegalOwnerGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SurnameLegalOwnerGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CompanyNameGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,10 +47,10 @@
             this.SDI_CodeGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VAT_CodeGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusCustomerGS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Select = new System.Windows.Forms.Button();
-            this.Delete = new System.Windows.Forms.Button();
-            this.Insert = new System.Windows.Forms.Button();
-            this.Update = new System.Windows.Forms.Button();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.SurnameTextBox = new System.Windows.Forms.TextBox();
             this.CompanyTextBox = new System.Windows.Forms.TextBox();
@@ -83,14 +83,16 @@
             this.PecTextBox = new System.Windows.Forms.TextBox();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.PhoneTextBox = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dGV
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dGV.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameLegalOwnerGS,
             this.SurnameLegalOwnerGS,
             this.CompanyNameGS,
@@ -107,13 +109,13 @@
             this.SDI_CodeGS,
             this.VAT_CodeGS,
             this.StatusCustomerGS});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 404);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1698, 278);
-            this.dataGridView1.TabIndex = 48;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dGV.Location = new System.Drawing.Point(12, 404);
+            this.dGV.Name = "dGV";
+            this.dGV.RowHeadersWidth = 51;
+            this.dGV.RowTemplate.Height = 24;
+            this.dGV.Size = new System.Drawing.Size(1698, 278);
+            this.dGV.TabIndex = 48;
+            this.dGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // NameLegalOwnerGS
             // 
@@ -233,49 +235,49 @@
             this.StatusCustomerGS.Name = "StatusCustomerGS";
             this.StatusCustomerGS.Width = 150;
             // 
-            // Select
+            // btnSelect
             // 
-            this.Select.BackColor = System.Drawing.Color.Blue;
-            this.Select.ForeColor = System.Drawing.Color.White;
-            this.Select.Location = new System.Drawing.Point(12, 332);
-            this.Select.Name = "Select";
-            this.Select.Size = new System.Drawing.Size(125, 43);
-            this.Select.TabIndex = 65;
-            this.Select.Text = "CERCA";
-            this.Select.UseVisualStyleBackColor = false;
+            this.btnSelect.BackColor = System.Drawing.Color.Blue;
+            this.btnSelect.ForeColor = System.Drawing.Color.White;
+            this.btnSelect.Location = new System.Drawing.Point(12, 332);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(125, 43);
+            this.btnSelect.TabIndex = 65;
+            this.btnSelect.Text = "CERCA";
+            this.btnSelect.UseVisualStyleBackColor = false;
             // 
-            // Delete
+            // btnDelete
             // 
-            this.Delete.BackColor = System.Drawing.Color.Red;
-            this.Delete.ForeColor = System.Drawing.Color.White;
-            this.Delete.Location = new System.Drawing.Point(890, 332);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(125, 43);
-            this.Delete.TabIndex = 66;
-            this.Delete.Text = "ELIMINA";
-            this.Delete.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(890, 332);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(125, 43);
+            this.btnDelete.TabIndex = 66;
+            this.btnDelete.Text = "ELIMINA";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // Insert
+            // btnInsert
             // 
-            this.Insert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.Insert.ForeColor = System.Drawing.Color.White;
-            this.Insert.Location = new System.Drawing.Point(312, 332);
-            this.Insert.Name = "Insert";
-            this.Insert.Size = new System.Drawing.Size(125, 43);
-            this.Insert.TabIndex = 67;
-            this.Insert.Text = "INSERISCI";
-            this.Insert.UseVisualStyleBackColor = false;
+            this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnInsert.ForeColor = System.Drawing.Color.White;
+            this.btnInsert.Location = new System.Drawing.Point(312, 332);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(125, 43);
+            this.btnInsert.TabIndex = 67;
+            this.btnInsert.Text = "INSERISCI";
+            this.btnInsert.UseVisualStyleBackColor = false;
             // 
-            // Update
+            // btnUpdate
             // 
-            this.Update.BackColor = System.Drawing.Color.Yellow;
-            this.Update.ForeColor = System.Drawing.Color.Black;
-            this.Update.Location = new System.Drawing.Point(605, 332);
-            this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(125, 43);
-            this.Update.TabIndex = 68;
-            this.Update.Text = "AGGIORNA";
-            this.Update.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.Yellow;
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Location = new System.Drawing.Point(605, 332);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(125, 43);
+            this.btnUpdate.TabIndex = 68;
+            this.btnUpdate.Text = "AGGIORNA";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // NameTextBox
             // 
@@ -574,14 +576,15 @@
             this.Controls.Add(this.CompanyTextBox);
             this.Controls.Add(this.SurnameTextBox);
             this.Controls.Add(this.NameTextBox);
-            this.Controls.Add(this.Update);
-            this.Controls.Add(this.Insert);
-            this.Controls.Add(this.Delete);
-            this.Controls.Add(this.Select);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnInsert);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnSelect);
+            this.Controls.Add(this.dGV);
             this.Name = "WinCustomers";
             this.Load += new System.EventHandler(this.WinCustomers_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -594,11 +597,11 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button Select;
-        private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.Button Insert;
-        private System.Windows.Forms.Button Update;
+        private System.Windows.Forms.DataGridView dGV;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox SurnameTextBox;
         private System.Windows.Forms.TextBox CompanyTextBox;
@@ -647,5 +650,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SDI_CodeGS;
         private System.Windows.Forms.DataGridViewTextBoxColumn VAT_CodeGS;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusCustomerGS;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
